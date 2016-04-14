@@ -61,9 +61,6 @@ void CompilerConsoleParameters::processArgument(const std::string& argument) {
 		throw UnknownCommandLineOption(argument);
 	} else {
 		source_path = argument;
-		if (!FileInfo::isAbsolutePath(source_path)) {
-			source_path = getProgramPath() + source_path;
-		}
 
 		FileInfo source(source_path);
 		output_path = source.getAbsolutePath() + source.getFilename();
