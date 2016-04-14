@@ -17,6 +17,7 @@
 #include "GoToStatement.h"
 #include "FunctionCallStatement.h"
 #include "GnuAssembler.h"
+#include "Builder.h"
 #include "../utils/Console.h"
 #include <cstdlib>
 
@@ -109,11 +110,14 @@ int main(int number_of_arguments, char** arguments) {
 		}
 
 		GnuAssembler assembler(&assembler_module);
-		assembler.assemble(compiler_console_parameters.getOutputPath());
+		assembler.assemble();
 		if (final_state == FinalState::ASSEMBLER_CODE) {
 			Console::information() << assembler.getAssemblerCode();
 			std::exit(EXIT_SUCCESS);
 		}
+
+		Builder::build(assembler.getAssemblerCode(), compiler_console_parameters
+			.getProgramPath(), compiler_console_parameters.getOutputPath());
 	} catch (const std::exception& exception) {
 		Console::error() << exception.what();
 		std::exit(EXIT_FAILURE);

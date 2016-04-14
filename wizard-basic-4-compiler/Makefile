@@ -39,6 +39,7 @@ OBJECTS = \
 	$(SOURCE_COMPILER)Compiler.o \
 	$(SOURCE_COMPILER)CommentDeleter.o \
 	$(SOURCE_COMPILER)CodeLines.o \
+	$(SOURCE_COMPILER)Builder.o \
 	$(SOURCE_COMPILER)AssemblerModule.o \
 	$(SOURCE_COMPILER)AssemblerMnemonic.o \
 	$(SOURCE_COMPILER)AssemblerCode.o \
@@ -63,8 +64,10 @@ OBJECTS = \
 	$(SOURCE_COMPILER_EXCEPTIONS)IfWithoutEnd.o \
 	$(SOURCE_COMPILER_EXCEPTIONS)IdentifierConflictWithVariable.o \
 	$(SOURCE_COMPILER_EXCEPTIONS)IdentifierConflictWithFunction.o \
+	$(SOURCE_COMPILER_EXCEPTIONS)FailedOpenTemporaryFileException.o \
 	$(SOURCE_COMPILER_EXCEPTIONS)EndWithoutIf.o \
-	$(SOURCE_COMPILER_EXCEPTIONS)CompileException.o
+	$(SOURCE_COMPILER_EXCEPTIONS)CompileException.o \
+	$(SOURCE_COMPILER_EXCEPTIONS)AssemblingOrLinkingException.o
 BUILD = ../build/
 CXXFLAGS += -std=c++03 -Wpedantic -Wall -Wextra -O3
 

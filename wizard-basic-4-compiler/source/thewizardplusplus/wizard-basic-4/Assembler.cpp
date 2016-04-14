@@ -21,12 +21,12 @@ AssemblerModule* Assembler::getAssemblerModule(void) const {
 	return assembler_module;
 }
 
-std::string Assembler::getOutputFilename(void) const {
-	return output_filename;
+std::string Assembler::getAssemblerCode(void) const {
+	return assembler_code;
 }
 
-void Assembler::assemble(const std::string& output_filename) {
-	this->output_filename = output_filename;
+void Assembler::assemble(void) {
+	assembler_code.clear();
 
 	beforeAssemble();
 

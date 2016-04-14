@@ -13,18 +13,19 @@ public:
 	Assembler(AssemblerModule* assembler_module);
 	virtual ~Assembler(void);
 	AssemblerModule* getAssemblerModule(void) const;
-	std::string getOutputFilename(void) const;
-	void assemble(const std::string& output_filename);
+	std::string getAssemblerCode(void) const;
+	void assemble(void);
 
 protected:
+	std::string assembler_code;
+
 	virtual void beforeAssemble(void);
-	virtual void processAssemblerMnemonic(
-		const AssemblerMnemonic& assembler_mnemonic) = 0;
+	virtual void processAssemblerMnemonic(const AssemblerMnemonic&
+		assembler_mnemonic) = 0;
 	virtual void afterAssemble(void);
 
 private:
 	AssemblerModule* assembler_module;
-	std::string      output_filename;
 };
 
 }

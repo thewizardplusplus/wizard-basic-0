@@ -11,16 +11,14 @@ public:
 	typedef std::map<std::string, std::string> FloatConstantMap;
 
 	GnuAssembler(AssemblerModule* assembler_module);
-	std::string getAssemblerCode(void) const;
 
 protected:
 	virtual void beforeAssemble(void);
-	virtual void processAssemblerMnemonic(
-		const AssemblerMnemonic& assembler_mnemonic);
+	virtual void processAssemblerMnemonic(const AssemblerMnemonic&
+		assembler_mnemonic);
 	virtual void afterAssemble(void);
 
 private:
-	std::string      assembler_code;
 	FloatConstantMap float_constants;
 
 	std::string getFloatConstantName(const std::string& value);

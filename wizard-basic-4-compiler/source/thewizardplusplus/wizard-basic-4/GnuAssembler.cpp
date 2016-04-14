@@ -14,10 +14,6 @@ GnuAssembler::GnuAssembler(AssemblerModule* assembler_module) :
 	Assembler(assembler_module)
 {}
 
-std::string GnuAssembler::getAssemblerCode(void) const {
-	return assembler_code;
-}
-
 void GnuAssembler::beforeAssemble(void) {
 	assembler_code +=
 		"\t.text\n"
@@ -33,8 +29,8 @@ void GnuAssembler::beforeAssemble(void) {
 	}
 }
 
-void GnuAssembler::processAssemblerMnemonic(
-	const AssemblerMnemonic& assembler_mnemonic)
+void GnuAssembler::processAssemblerMnemonic(const AssemblerMnemonic&
+	assembler_mnemonic)
 {
 	std::string mnemonic = assembler_mnemonic.getMnemonic();
 	if (mnemonic == AssemblerModule::PUSH_NUMBER_MNEMONIC_NAME) {
