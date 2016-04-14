@@ -28,6 +28,7 @@ OBJECTS = \
 	$(SOURCE_COMPILER)GoToStatement.o \
 	$(SOURCE_COMPILER)GnuAssembler.o \
 	$(SOURCE_COMPILER)FunctionCallStatement.o \
+	$(SOURCE_COMPILER)FinalState.o \
 	$(SOURCE_COMPILER)ExpressionCompiler.o \
 	$(SOURCE_COMPILER)EndStatement.o \
 	$(SOURCE_COMPILER)EmptyLineDeleter.o \
@@ -41,7 +42,9 @@ OBJECTS = \
 	$(SOURCE_COMPILER)AssemblerMnemonic.o \
 	$(SOURCE_COMPILER)AssemblerCode.o \
 	$(SOURCE_COMPILER)Assembler.o \
+	$(SOURCE_COMPILER_EXCEPTIONS)UnspecifiedSourceFile.o \
 	$(SOURCE_COMPILER_EXCEPTIONS)UnknownStatement.o \
+	$(SOURCE_COMPILER_EXCEPTIONS)UnknownFinalState.o \
 	$(SOURCE_COMPILER_EXCEPTIONS)UnknownExpressionToken.o \
 	$(SOURCE_COMPILER_EXCEPTIONS)UnknownCommandLineOption.o \
 	$(SOURCE_COMPILER_EXCEPTIONS)UndefinedVariable.o \

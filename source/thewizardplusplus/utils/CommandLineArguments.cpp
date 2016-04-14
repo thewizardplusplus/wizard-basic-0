@@ -48,9 +48,14 @@ void CommandLineArguments::set(const char * const * const arguments,
 
 	std::string argument = getNextArgument();
 	program_path = FileInfo(argument).getAbsolutePath();
-	while (!argument.empty()) {
-		processArgument(argument);
+
+	while (true) {
 		argument = getNextArgument();
+		if (argument.empty()) {
+			break;
+		}
+
+		processArgument(argument);
 	}
 }
 

@@ -91,3 +91,20 @@ StringList StringUtils::tokenize(const std::string& string,
 
 	return tokens;
 }
+
+bool StringUtils::startWith(const std::string& string, const std::string&
+	prefix)
+{
+	return string.substr(0, prefix.size()) == prefix;
+}
+
+bool StringUtils::endWith(const std::string& string, const std::string& suffix)
+{
+	size_t string_size = string.size();
+	size_t suffix_size = suffix.size();
+	if (string_size < suffix_size) {
+		return false;
+	}
+
+	return string.substr(string_size - suffix_size, suffix_size) == suffix;
+}

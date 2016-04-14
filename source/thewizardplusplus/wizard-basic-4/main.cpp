@@ -1,4 +1,5 @@
 #include "CompilerConsoleParameters.h"
+#include "exceptions/UnspecifiedSourceFile.h"
 #include "PreprocessorManager.h"
 #include "LineTrimmer.h"
 #include "EmptyLineDeleter.h"
@@ -20,12 +21,16 @@
 #include <cstdlib>
 
 using namespace thewizardplusplus::wizard_basic_4;
+using namespace thewizardplusplus::wizard_basic_4::exceptions;
 using namespace thewizardplusplus::utils;
 
 int main(int number_of_arguments, char** arguments) {
 	try {
 		CompilerConsoleParameters compiler_console_parameters;
 		compiler_console_parameters.set(arguments, number_of_arguments);
+		if (compiler_console_parameters.getSourcePath().empty()) {
+			throw UnspecifiedSourceFile();
+		}
 
 		PreprocessorManager::PreprocessorList preprocessors;
 		preprocessors.push_back(new LineTrimmer());
@@ -34,11 +39,14 @@ int main(int number_of_arguments, char** arguments) {
 		preprocessors.push_back(new EmptyLineDeleter());
 		PreprocessorManager preprocessor_manager(preprocessors);
 
-		Console::information() << "Preprocessing...";
 		CodeLines code_lines = preprocessor_manager.preprocess(
 			compiler_console_parameters.getSourcePath());
-		Console::information() << code_lines;
-		Console::information().emptyLine();
+		FinalState::Types final_state = compiler_console_parameters
+			.getFinalState();
+		if (final_state == FinalState::PREPROCESSED_CODE) {
+			Console::information() << code_lines;
+			std::exit(EXIT_SUCCESS);
+		}
 
 		AssemblerModule assembler_module;
 		StringList inbuilt_function = StringUtils::split(LanguageElements
@@ -95,18 +103,20 @@ int main(int number_of_arguments, char** arguments) {
 			operators, LanguageElements::OPENING_BRACKET, LanguageElements
 			::CLOSING_BRACKET, LanguageElements::FUNCTION_ARGUMENT_SEPARATOR));
 
-		Console::information() << "Compiling...";
 		compiler.compile(code_lines);
-		Console::information() << assembler_module.getAssemblerCode();
-		Console::information().emptyLine();
+		if (final_state == FinalState::BYTE_CODE) {
+			Console::information() << assembler_module.getAssemblerCode();
+			std::exit(EXIT_SUCCESS);
+		}
 
-		/*GnuAssembler assembler(&assembler_module);
-
-		Console::information() << "Assembling...";
+		GnuAssembler assembler(&assembler_module);
 		assembler.assemble(compiler_console_parameters.getOutputPath());
-		Console::information() << assembler.getAssemblerCode();*/
+		if (final_state == FinalState::ASSEMBLER_CODE) {
+			Console::information() << assembler.getAssemblerCode();
+			std::exit(EXIT_SUCCESS);
+		}
 	} catch (const std::exception& exception) {
 		Console::error() << exception.what();
-		return EXIT_FAILURE;
+		std::exit(EXIT_FAILURE);
 	}
 }

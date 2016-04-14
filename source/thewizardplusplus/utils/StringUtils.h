@@ -15,6 +15,8 @@ public:
 		const std::string& separator, bool keep_empty_parts = true);
 	static StringList tokenize(const std::string& string,
 		const StringList& separators, bool return_separators = false);
+	static bool startWith(const std::string& string, const std::string& prefix);
+	static bool endWith(const std::string& string, const std::string& suffix);
 };
 
 }
