@@ -1,9 +1,11 @@
 #include "maths.h"
+#include <stdbool.h>
 #include <math.h>
+#include <tgmath.h>
 #include <stdlib.h>
 #include <time.h>
 
-static Boolean initialize_prmg = FALSE;
+static bool initialized_prng = false;
 
 NumberType Sin(NumberType number) {
 	return sin(number);
@@ -29,20 +31,20 @@ NumberType Arctg(NumberType number) {
 	return atan(number);
 }
 
-NumberType Sh(NumberType number) {
-	return sinh(number);
+NumberType Arctg2(NumberType y, NumberType x) {
+	return atan2(y, x);
 }
 
-NumberType Ch(NumberType number) {
-	return cosh(number);
+NumberType Pow(NumberType base, NumberType exponent) {
+	return pow(base, exponent);
 }
 
-NumberType Th(NumberType number) {
-	return tanh(number);
-}
-
-NumberType Exponent(NumberType number) {
+NumberType Exp(NumberType number) {
 	return exp(number);
+}
+
+NumberType Sqrt(NumberType number) {
+	return sqrt(number);
 }
 
 NumberType Ln(NumberType number) {
@@ -53,31 +55,19 @@ NumberType Lg(NumberType number) {
 	return log10(number);
 }
 
-NumberType Modulus(NumberType number) {
+NumberType Abs(NumberType number) {
 	return fabs(number);
 }
 
-NumberType Power(NumberType base, NumberType exponent) {
-	return pow(base, exponent);
+NumberType Trunc(NumberType number) {
+	return trunc(number);
 }
 
-NumberType Integer(NumberType number) {
-	return floor(number);
-}
-
-NumberType Random(NumberType minimum, NumberType maximum) {
-	if (initialize_prmg == FALSE) {
+NumberType Rand() {
+	if (!initialized_prng) {
 		srand(time(NULL));
-		initialize_prmg = TRUE;
+		initialized_prng = true;
 	}
 
-	return (NumberType)rand() / RAND_MAX * (maximum - minimum) + minimum;
-}
-
-NumberType SquareRoot(NumberType number) {
-	return sqrt(number);
-}
-
-NumberType Angle(NumberType x, NumberType y) {
-	return atan2(y, x);
+	return (NumberType)rand() / RAND_MAX;
 }

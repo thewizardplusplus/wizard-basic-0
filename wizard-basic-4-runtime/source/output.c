@@ -1,6 +1,5 @@
 #include "output.h"
 #include <stdio.h>
-#include <stdlib.h>
 
 static const char* STRING_SHOW_FORMAT = "%s";
 static const char* NUMBER_SHOW_FORMAT = "%f";
