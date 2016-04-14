@@ -1,0 +1,109 @@
+<?xml version = "1.0" encoding = "UTF-8" ?>
+<!DOCTYPE language SYSTEM "language.dtd">
+<language
+	name =       "Wizard BASIC 4"
+	section =    "Sources"
+	extensions = "*.ni"
+	version =    "1.0"
+	license =    "MIT">
+	<highlighting>
+		<list name = "keywords">
+			<item> define </item>
+			<item> as </item>
+			<item> declare </item>
+			<item> let </item>
+			<item> if </item>
+			<item> then </item>
+			<item> end </item>
+			<item> label </item>
+			<item> not </item>
+			<item> and </item>
+			<item> or </item>
+		</list>
+		<list name = "functions">
+			<item> ShowString </item>
+			<item> ShowNumber </item>
+			<item> StartStopwatch </item>
+			<item> GetElapsedTime </item>
+			<item> Exit </item>
+			<item> Sin </item>
+			<item> Cos </item>
+			<item> Tg </item>
+			<item> Arcsin </item>
+			<item> Arccos </item>
+			<item> Arctg </item>
+			<item> Sh </item>
+			<item> Ch </item>
+			<item> Th </item>
+			<item> Exponent </item>
+			<item> Ln </item>
+			<item> Lg </item>
+			<item> Modulus </item>
+			<item> Power </item>
+			<item> Integer </item>
+			<item> Random </item>
+			<item> SquareRoot </item>
+			<item> Angle </item>
+		</list>
+		<contexts>
+			<context name =      "Normal"
+				lineEndContext = "#stay"
+				attribute =      "Normal Text">
+				<keyword
+					attribute = "Keyword"
+					context =   "#stay"
+					String =    "keywords" />
+				<keyword
+					attribute = "Function"
+					context =   "#stay"
+					String =    "functions" />
+				<RegExpr
+					attribute = "Keyword"
+					context =   "#stay"
+					String =    "\bgo\s*to\b" />
+				<Float attribute = "Data" context = "#stay" />
+				<Int attribute = "Data" context = "#stay" />
+				<DetectChar
+					attribute = "String"
+					context =   "String"
+					char =      "&quot;" />
+				<StringDetect
+					attribute = "Comment"
+					context =   "Comment"
+					String =    "note" />
+			</context>
+			<context
+				name =           "String"
+				lineEndContext = "#pop"
+				attribute =      "String">
+				<DetectChar
+					attribute = "String"
+					context =   "#pop"
+					char =      "&quot;" />
+			</context>
+			<context
+				name =           "Comment"
+				lineEndContext = "#pop"
+				attribute =      "Comment">
+				<DetectChar
+					attribute = "Comment"
+					context =   "#pop"
+					char =      "\n" />
+			</context>
+		</contexts>
+		<itemDatas>
+			<itemData name = "Normal Text" defStyleNum="dsNormal" />
+			<itemData name = "Keyword" defStyleNum = "dsKeyword" />
+			<itemData name = "Function" defStyleNum = "dsFunction" />
+			<itemData name = "Data" defStyleNum = "dsFloat" />
+			<itemData name = "String" defStyleNum = "dsString" />
+			<itemData name = "Comment" defStyleNum = "dsComment" />
+		</itemDatas>
+	</highlighting>
+	<general>
+		<comments>
+			<comment name = "singleLine" start = "note" />
+		</comments>
+		<keywords casesensitive = "1" />
+	</general>
+</language>

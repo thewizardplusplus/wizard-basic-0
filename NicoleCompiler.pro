@@ -1,4 +1,4 @@
-TARGET = nicole_compiler
+TARGET = wizard_basic_4
 CONFIG += console
 CONFIG -= qt
 HEADERS += \
@@ -18,54 +18,54 @@ HEADERS += \
 	source/thewizardplusplus/utils/exceptions/NullPointerToCommandLineArgument.h \
 	source/thewizardplusplus/utils/exceptions/NullPointerToArrayOfCommandLineArguments.h \
 	source/thewizardplusplus/utils/exceptions/InvalidNumberOfCommandLineArguments.h \
-	source/thewizardplusplus/nicole_compiler/StatementCompiler.h \
-	source/thewizardplusplus/nicole_compiler/PreprocessorManager.h \
-	source/thewizardplusplus/nicole_compiler/Preprocessor.h \
-	source/thewizardplusplus/nicole_compiler/OperatorList.h \
-	source/thewizardplusplus/nicole_compiler/OperatorAssociativity.h \
-	source/thewizardplusplus/nicole_compiler/Operator.h \
-	source/thewizardplusplus/nicole_compiler/LineTrimmer.h \
-	source/thewizardplusplus/nicole_compiler/LetStatement.h \
-	source/thewizardplusplus/nicole_compiler/LanguageElements.h \
-	source/thewizardplusplus/nicole_compiler/LabelStatement.h \
-	source/thewizardplusplus/nicole_compiler/IfStatement.h \
-	source/thewizardplusplus/nicole_compiler/GoToStatement.h \
-	source/thewizardplusplus/nicole_compiler/GnuAssembler.h \
-	source/thewizardplusplus/nicole_compiler/FunctionCallStatement.h \
-	source/thewizardplusplus/nicole_compiler/ExpressionCompiler.h \
-	source/thewizardplusplus/nicole_compiler/EndStatement.h \
-	source/thewizardplusplus/nicole_compiler/EmptyLineDeleter.h \
-	source/thewizardplusplus/nicole_compiler/DefineStatement.h \
-	source/thewizardplusplus/nicole_compiler/DeclareFunctionStatement.h \
-	source/thewizardplusplus/nicole_compiler/current_version.h \
-	source/thewizardplusplus/nicole_compiler/CompilerConsoleParameters.h \
-	source/thewizardplusplus/nicole_compiler/Compiler.h \
-	source/thewizardplusplus/nicole_compiler/CommentDeleter.h \
-	source/thewizardplusplus/nicole_compiler/CodeLines.h \
-	source/thewizardplusplus/nicole_compiler/AssemblerModule.h \
-	source/thewizardplusplus/nicole_compiler/AssemblerMnemonic.h \
-	source/thewizardplusplus/nicole_compiler/AssemblerCode.h \
-	source/thewizardplusplus/nicole_compiler/Assembler.h \
-	source/thewizardplusplus/nicole_compiler/exceptions/UnknownStatement.h \
-	source/thewizardplusplus/nicole_compiler/exceptions/UnknownExpressionToken.h \
-	source/thewizardplusplus/nicole_compiler/exceptions/UnknownCommandLineOption.h \
-	source/thewizardplusplus/nicole_compiler/exceptions/UndefinedVariable.h \
-	source/thewizardplusplus/nicole_compiler/exceptions/UndefinedFunction.h \
-	source/thewizardplusplus/nicole_compiler/exceptions/UnableToOpenSourceFile.h \
-	source/thewizardplusplus/nicole_compiler/exceptions/SeparatorNotFound.h \
-	source/thewizardplusplus/nicole_compiler/exceptions/MissedOpeningBracket.h \
-	source/thewizardplusplus/nicole_compiler/exceptions/MissedFunctionArgumentSeparatorOrOpeningBracket.h \
-	source/thewizardplusplus/nicole_compiler/exceptions/MissedClosingBracket.h \
-	source/thewizardplusplus/nicole_compiler/exceptions/LabelConflictWithOtherLabel.h \
-	source/thewizardplusplus/nicole_compiler/exceptions/LabelConflictWithConditionalJumps.h \
-	source/thewizardplusplus/nicole_compiler/exceptions/InvalidStringFormat.h \
-	source/thewizardplusplus/nicole_compiler/exceptions/InvalidNumberOfCodeLineParts.h \
-	source/thewizardplusplus/nicole_compiler/exceptions/InvalidFunctionIdentifier.h \
-	source/thewizardplusplus/nicole_compiler/exceptions/IfWithoutEnd.h \
-	source/thewizardplusplus/nicole_compiler/exceptions/IdentifierConflictWithVariable.h \
-	source/thewizardplusplus/nicole_compiler/exceptions/IdentifierConflictWithFunction.h \
-	source/thewizardplusplus/nicole_compiler/exceptions/EndWithoutIf.h \
-	source/thewizardplusplus/nicole_compiler/exceptions/CompileException.h
+	source/thewizardplusplus/wizard-basic-4/StatementCompiler.h \
+	source/thewizardplusplus/wizard-basic-4/PreprocessorManager.h \
+	source/thewizardplusplus/wizard-basic-4/Preprocessor.h \
+	source/thewizardplusplus/wizard-basic-4/OperatorList.h \
+	source/thewizardplusplus/wizard-basic-4/OperatorAssociativity.h \
+	source/thewizardplusplus/wizard-basic-4/Operator.h \
+	source/thewizardplusplus/wizard-basic-4/LineTrimmer.h \
+	source/thewizardplusplus/wizard-basic-4/LetStatement.h \
+	source/thewizardplusplus/wizard-basic-4/LanguageElements.h \
+	source/thewizardplusplus/wizard-basic-4/LabelStatement.h \
+	source/thewizardplusplus/wizard-basic-4/IfStatement.h \
+	source/thewizardplusplus/wizard-basic-4/GoToStatement.h \
+	source/thewizardplusplus/wizard-basic-4/GnuAssembler.h \
+	source/thewizardplusplus/wizard-basic-4/FunctionCallStatement.h \
+	source/thewizardplusplus/wizard-basic-4/ExpressionCompiler.h \
+	source/thewizardplusplus/wizard-basic-4/EndStatement.h \
+	source/thewizardplusplus/wizard-basic-4/EmptyLineDeleter.h \
+	source/thewizardplusplus/wizard-basic-4/DefineStatement.h \
+	source/thewizardplusplus/wizard-basic-4/DeclareFunctionStatement.h \
+	source/thewizardplusplus/wizard-basic-4/current_version.h \
+	source/thewizardplusplus/wizard-basic-4/CompilerConsoleParameters.h \
+	source/thewizardplusplus/wizard-basic-4/Compiler.h \
+	source/thewizardplusplus/wizard-basic-4/CommentDeleter.h \
+	source/thewizardplusplus/wizard-basic-4/CodeLines.h \
+	source/thewizardplusplus/wizard-basic-4/AssemblerModule.h \
+	source/thewizardplusplus/wizard-basic-4/AssemblerMnemonic.h \
+	source/thewizardplusplus/wizard-basic-4/AssemblerCode.h \
+	source/thewizardplusplus/wizard-basic-4/Assembler.h \
+	source/thewizardplusplus/wizard-basic-4/exceptions/UnknownStatement.h \
+	source/thewizardplusplus/wizard-basic-4/exceptions/UnknownExpressionToken.h \
+	source/thewizardplusplus/wizard-basic-4/exceptions/UnknownCommandLineOption.h \
+	source/thewizardplusplus/wizard-basic-4/exceptions/UndefinedVariable.h \
+	source/thewizardplusplus/wizard-basic-4/exceptions/UndefinedFunction.h \
+	source/thewizardplusplus/wizard-basic-4/exceptions/UnableToOpenSourceFile.h \
+	source/thewizardplusplus/wizard-basic-4/exceptions/SeparatorNotFound.h \
+	source/thewizardplusplus/wizard-basic-4/exceptions/MissedOpeningBracket.h \
+	source/thewizardplusplus/wizard-basic-4/exceptions/MissedFunctionArgumentSeparatorOrOpeningBracket.h \
+	source/thewizardplusplus/wizard-basic-4/exceptions/MissedClosingBracket.h \
+	source/thewizardplusplus/wizard-basic-4/exceptions/LabelConflictWithOtherLabel.h \
+	source/thewizardplusplus/wizard-basic-4/exceptions/LabelConflictWithConditionalJumps.h \
+	source/thewizardplusplus/wizard-basic-4/exceptions/InvalidStringFormat.h \
+	source/thewizardplusplus/wizard-basic-4/exceptions/InvalidNumberOfCodeLineParts.h \
+	source/thewizardplusplus/wizard-basic-4/exceptions/InvalidFunctionIdentifier.h \
+	source/thewizardplusplus/wizard-basic-4/exceptions/IfWithoutEnd.h \
+	source/thewizardplusplus/wizard-basic-4/exceptions/IdentifierConflictWithVariable.h \
+	source/thewizardplusplus/wizard-basic-4/exceptions/IdentifierConflictWithFunction.h \
+	source/thewizardplusplus/wizard-basic-4/exceptions/EndWithoutIf.h \
+	source/thewizardplusplus/wizard-basic-4/exceptions/CompileException.h
 SOURCES += \
 	source/thewizardplusplus/utils/StringUtils.cpp \
 	source/thewizardplusplus/utils/StringList.cpp \
@@ -77,59 +77,59 @@ SOURCES += \
 	source/thewizardplusplus/utils/exceptions/NullPointerToCommandLineArgument.cpp \
 	source/thewizardplusplus/utils/exceptions/NullPointerToArrayOfCommandLineArguments.cpp \
 	source/thewizardplusplus/utils/exceptions/InvalidNumberOfCommandLineArguments.cpp \
-	source/thewizardplusplus/nicole_compiler/StatementCompiler.cpp \
-	source/thewizardplusplus/nicole_compiler/PreprocessorManager.cpp \
-	source/thewizardplusplus/nicole_compiler/Preprocessor.cpp \
-	source/thewizardplusplus/nicole_compiler/OperatorList.cpp \
-	source/thewizardplusplus/nicole_compiler/Operator.cpp \
-	source/thewizardplusplus/nicole_compiler/main.cpp \
-	source/thewizardplusplus/nicole_compiler/LineTrimmer.cpp \
-	source/thewizardplusplus/nicole_compiler/LetStatement.cpp \
-	source/thewizardplusplus/nicole_compiler/LanguageElements.cpp \
-	source/thewizardplusplus/nicole_compiler/LabelStatement.cpp \
-	source/thewizardplusplus/nicole_compiler/IfStatement.cpp \
-	source/thewizardplusplus/nicole_compiler/GoToStatement.cpp \
-	source/thewizardplusplus/nicole_compiler/GnuAssembler.cpp \
-	source/thewizardplusplus/nicole_compiler/FunctionCallStatement.cpp \
-	source/thewizardplusplus/nicole_compiler/ExpressionCompiler.cpp \
-	source/thewizardplusplus/nicole_compiler/EndStatement.cpp \
-	source/thewizardplusplus/nicole_compiler/EmptyLineDeleter.cpp \
-	source/thewizardplusplus/nicole_compiler/DefineStatement.cpp \
-	source/thewizardplusplus/nicole_compiler/DeclareFunctionStatement.cpp \
-	source/thewizardplusplus/nicole_compiler/CompilerConsoleParameters.cpp \
-	source/thewizardplusplus/nicole_compiler/Compiler.cpp \
-	source/thewizardplusplus/nicole_compiler/CommentDeleter.cpp \
-	source/thewizardplusplus/nicole_compiler/CodeLines.cpp \
-	source/thewizardplusplus/nicole_compiler/AssemblerModule.cpp \
-	source/thewizardplusplus/nicole_compiler/AssemblerMnemonic.cpp \
-	source/thewizardplusplus/nicole_compiler/AssemblerCode.cpp \
-	source/thewizardplusplus/nicole_compiler/Assembler.cpp \
-	source/thewizardplusplus/nicole_compiler/exceptions/UnknownStatement.cpp \
-	source/thewizardplusplus/nicole_compiler/exceptions/UnknownExpressionToken.cpp \
-	source/thewizardplusplus/nicole_compiler/exceptions/UnknownCommandLineOption.cpp \
-	source/thewizardplusplus/nicole_compiler/exceptions/UndefinedVariable.cpp \
-	source/thewizardplusplus/nicole_compiler/exceptions/UndefinedFunction.cpp \
-	source/thewizardplusplus/nicole_compiler/exceptions/UnableToOpenSourceFile.cpp \
-	source/thewizardplusplus/nicole_compiler/exceptions/SeparatorNotFound.cpp \
-	source/thewizardplusplus/nicole_compiler/exceptions/MissedOpeningBracket.cpp \
-	source/thewizardplusplus/nicole_compiler/exceptions/MissedFunctionArgumentSeparatorOrOpeningBracket.cpp \
-	source/thewizardplusplus/nicole_compiler/exceptions/MissedClosingBracket.cpp \
-	source/thewizardplusplus/nicole_compiler/exceptions/LabelConflictWithOtherLabel.cpp \
-	source/thewizardplusplus/nicole_compiler/exceptions/LabelConflictWithConditionalJumps.cpp \
-	source/thewizardplusplus/nicole_compiler/exceptions/InvalidStringFormat.cpp \
-	source/thewizardplusplus/nicole_compiler/exceptions/InvalidNumberOfCodeLineParts.cpp \
-	source/thewizardplusplus/nicole_compiler/exceptions/InvalidFunctionIdentifier.cpp \
-	source/thewizardplusplus/nicole_compiler/exceptions/IfWithoutEnd.cpp \
-	source/thewizardplusplus/nicole_compiler/exceptions/IdentifierConflictWithVariable.cpp \
-	source/thewizardplusplus/nicole_compiler/exceptions/IdentifierConflictWithFunction.cpp \
-	source/thewizardplusplus/nicole_compiler/exceptions/EndWithoutIf.cpp \
-	source/thewizardplusplus/nicole_compiler/exceptions/CompileException.cpp
+	source/thewizardplusplus/wizard-basic-4/StatementCompiler.cpp \
+	source/thewizardplusplus/wizard-basic-4/PreprocessorManager.cpp \
+	source/thewizardplusplus/wizard-basic-4/Preprocessor.cpp \
+	source/thewizardplusplus/wizard-basic-4/OperatorList.cpp \
+	source/thewizardplusplus/wizard-basic-4/Operator.cpp \
+	source/thewizardplusplus/wizard-basic-4/main.cpp \
+	source/thewizardplusplus/wizard-basic-4/LineTrimmer.cpp \
+	source/thewizardplusplus/wizard-basic-4/LetStatement.cpp \
+	source/thewizardplusplus/wizard-basic-4/LanguageElements.cpp \
+	source/thewizardplusplus/wizard-basic-4/LabelStatement.cpp \
+	source/thewizardplusplus/wizard-basic-4/IfStatement.cpp \
+	source/thewizardplusplus/wizard-basic-4/GoToStatement.cpp \
+	source/thewizardplusplus/wizard-basic-4/GnuAssembler.cpp \
+	source/thewizardplusplus/wizard-basic-4/FunctionCallStatement.cpp \
+	source/thewizardplusplus/wizard-basic-4/ExpressionCompiler.cpp \
+	source/thewizardplusplus/wizard-basic-4/EndStatement.cpp \
+	source/thewizardplusplus/wizard-basic-4/EmptyLineDeleter.cpp \
+	source/thewizardplusplus/wizard-basic-4/DefineStatement.cpp \
+	source/thewizardplusplus/wizard-basic-4/DeclareFunctionStatement.cpp \
+	source/thewizardplusplus/wizard-basic-4/CompilerConsoleParameters.cpp \
+	source/thewizardplusplus/wizard-basic-4/Compiler.cpp \
+	source/thewizardplusplus/wizard-basic-4/CommentDeleter.cpp \
+	source/thewizardplusplus/wizard-basic-4/CodeLines.cpp \
+	source/thewizardplusplus/wizard-basic-4/AssemblerModule.cpp \
+	source/thewizardplusplus/wizard-basic-4/AssemblerMnemonic.cpp \
+	source/thewizardplusplus/wizard-basic-4/AssemblerCode.cpp \
+	source/thewizardplusplus/wizard-basic-4/Assembler.cpp \
+	source/thewizardplusplus/wizard-basic-4/exceptions/UnknownStatement.cpp \
+	source/thewizardplusplus/wizard-basic-4/exceptions/UnknownExpressionToken.cpp \
+	source/thewizardplusplus/wizard-basic-4/exceptions/UnknownCommandLineOption.cpp \
+	source/thewizardplusplus/wizard-basic-4/exceptions/UndefinedVariable.cpp \
+	source/thewizardplusplus/wizard-basic-4/exceptions/UndefinedFunction.cpp \
+	source/thewizardplusplus/wizard-basic-4/exceptions/UnableToOpenSourceFile.cpp \
+	source/thewizardplusplus/wizard-basic-4/exceptions/SeparatorNotFound.cpp \
+	source/thewizardplusplus/wizard-basic-4/exceptions/MissedOpeningBracket.cpp \
+	source/thewizardplusplus/wizard-basic-4/exceptions/MissedFunctionArgumentSeparatorOrOpeningBracket.cpp \
+	source/thewizardplusplus/wizard-basic-4/exceptions/MissedClosingBracket.cpp \
+	source/thewizardplusplus/wizard-basic-4/exceptions/LabelConflictWithOtherLabel.cpp \
+	source/thewizardplusplus/wizard-basic-4/exceptions/LabelConflictWithConditionalJumps.cpp \
+	source/thewizardplusplus/wizard-basic-4/exceptions/InvalidStringFormat.cpp \
+	source/thewizardplusplus/wizard-basic-4/exceptions/InvalidNumberOfCodeLineParts.cpp \
+	source/thewizardplusplus/wizard-basic-4/exceptions/InvalidFunctionIdentifier.cpp \
+	source/thewizardplusplus/wizard-basic-4/exceptions/IfWithoutEnd.cpp \
+	source/thewizardplusplus/wizard-basic-4/exceptions/IdentifierConflictWithVariable.cpp \
+	source/thewizardplusplus/wizard-basic-4/exceptions/IdentifierConflictWithFunction.cpp \
+	source/thewizardplusplus/wizard-basic-4/exceptions/EndWithoutIf.cpp \
+	source/thewizardplusplus/wizard-basic-4/exceptions/CompileException.cpp
 OTHER_FILES += \
 	docs/examples/maze.ni \
 	docs/to_do.txt \
 	docs/grammar.txt \
 	docs/examples/pi.ni \
 	docs/working_log.txt \
-	docs/syntax_highlighting/nicole_kate.xml \
-	docs/syntax_highlighting/nicole_notepadpp.xml
+	docs/syntax_highlighting/wizard_basic_4_kate.xml \
+	docs/syntax_highlighting/wizard_basic_4_notepadpp.xml
 QMAKE_CXXFLAGS += -std=c++98 -Wall -W -pedantic
