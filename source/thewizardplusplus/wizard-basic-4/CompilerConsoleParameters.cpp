@@ -14,9 +14,8 @@ const std::string CompilerConsoleParameters::VERSION_OPTION_SHORT =   "-v";
 const std::string CompilerConsoleParameters::VERSION_OPTION_LONG =
 	"--version";
 const std::string CompilerConsoleParameters::VERSION_MESSAGE =
-	"Wizard BASIC 4 Compiler, compiler for the programming language Wizard "
-	"BASIC 4, version %0%.\n"
-	"(c) 2013 thewizardplusplus, http://thewizardplusplus.ru.";
+	"Wizard BASIC 4, v%0%\n"
+	"Copyright (c) 2013-2016 thewizardplusplus";
 const std::string CompilerConsoleParameters::HELP_OPTION_SHORT =      "-h";
 const std::string CompilerConsoleParameters::HELP_OPTION_LONG =
 	"--help";

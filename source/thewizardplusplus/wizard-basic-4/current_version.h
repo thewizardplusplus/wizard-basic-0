@@ -6,7 +6,7 @@
 namespace thewizardplusplus {
 namespace wizard_basic_4 {
 
-typedef utils::Version<0, 1> CurrentVersion;
+typedef utils::Version<1, 0> CurrentVersion;
 
 }
 }
