@@ -1,6 +1,6 @@
 #include "IfWithoutEnd.h"
 
-using namespace thewizard::nicole_compiler::exceptions;
+using namespace thewizardplusplus::nicole_compiler::exceptions;
 
 const std::string IfWithoutEnd::MESSAGE = "if without end";
 

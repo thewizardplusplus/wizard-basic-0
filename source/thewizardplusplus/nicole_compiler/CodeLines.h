@@ -4,13 +4,14 @@
 #include <map>
 #include <string>
 
-namespace thewizard {
+namespace thewizardplusplus {
 namespace nicole_compiler {
 
 class CodeLines : public std::map<unsigned long int, std::string> {
 public:
-	static const std::string CODE_LINE_STRING_TEMPLATE;
-	static const char        CODE_LINE_SEPARATOR;
+	static const std::string       CODE_LINE_STRING_TEMPLATE;
+	static const std::string       CODE_LINE_SEPARATOR;
+	static const unsigned long int CODE_LINE_SEPARATOR_LENGTH = 1;
 
 	operator std::string(void) const;
 	std::string toString(void) const;

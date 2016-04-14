@@ -1,6 +1,6 @@
 #include "Console.h"
 
-using namespace thewizard::utils;
+using namespace thewizardplusplus::utils;
 
 Console Console::information(void) {
 	return Console(ConsoleMessageType::INFORMATION);
@@ -42,3 +42,5 @@ Console& Console::operator<<(std::string message) {
 	this->message += message;
 	return *this;
 }
+
+void Console::emptyLine(void) {}

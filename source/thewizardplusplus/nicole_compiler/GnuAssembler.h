@@ -3,7 +3,7 @@
 
 #include "Assembler.h"
 
-namespace thewizard {
+namespace thewizardplusplus {
 namespace nicole_compiler {
 
 class GnuAssembler : public Assembler {

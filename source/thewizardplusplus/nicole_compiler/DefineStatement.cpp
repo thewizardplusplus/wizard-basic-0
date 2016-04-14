@@ -2,13 +2,11 @@
 #include "exceptions/InvalidNumberOfCodeLineParts.h"
 #include "exceptions/InvalidStringFormat.h"
 #include "Compiler.h"
-#include "ExpressionCompiler.h"
 #include "AssemblerModule.h"
-#include "../utils/Console.h"
 
-using namespace thewizard::nicole_compiler;
-using namespace thewizard::nicole_compiler::exceptions;
-using namespace thewizard::utils;
+using namespace thewizardplusplus::nicole_compiler;
+using namespace thewizardplusplus::nicole_compiler::exceptions;
+using namespace thewizardplusplus::utils;
 
 const std::string DefineStatement::MARK =      "define";
 const std::string DefineStatement::SEPARATOR = "as";
@@ -30,7 +28,6 @@ void DefineStatement::compile(const StringList& code_line_parts) {
 		throw InvalidStringFormat();
 	}
 
-	AssemblerModule* assembler_module = getCompiler()->getAssemblerModule();
-	assembler_module->addStringConstant(identifier, string.substr(1, string
-		.length() - 2));
+	getCompiler()->getAssemblerModule()->addStringConstant(identifier, string
+		.substr(1, string.length() - 2));
 }

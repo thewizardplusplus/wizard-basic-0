@@ -1,6 +1,6 @@
 #include "Operator.h"
 
-using namespace thewizard::nicole_compiler;
+using namespace thewizardplusplus::nicole_compiler;
 
 Operator::Operator(void) :
 	valid(false)

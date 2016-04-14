@@ -1,8 +1,8 @@
 #include "LabelConflictWithOtherLabel.h"
 #include "../../utils/Formatter.h"
 
-using namespace thewizard::nicole_compiler::exceptions;
-using namespace thewizard::utils;
+using namespace thewizardplusplus::nicole_compiler::exceptions;
+using namespace thewizardplusplus::utils;
 
 const std::string LabelConflictWithOtherLabel::MESSAGE = "label conflict with "
 	"the other label \"%0%\"";

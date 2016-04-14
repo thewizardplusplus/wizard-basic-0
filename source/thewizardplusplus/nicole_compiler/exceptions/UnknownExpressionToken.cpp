@@ -1,8 +1,8 @@
 #include "UnknownExpressionToken.h"
 #include "../../utils/Formatter.h"
 
-using namespace thewizard::nicole_compiler::exceptions;
-using namespace thewizard::utils;
+using namespace thewizardplusplus::nicole_compiler::exceptions;
+using namespace thewizardplusplus::utils;
 
 const std::string UnknownExpressionToken::MESSAGE = "unknown expression token "
 	"\"%0%\"";

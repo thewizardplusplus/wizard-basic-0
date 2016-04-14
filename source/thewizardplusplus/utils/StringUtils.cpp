@@ -1,7 +1,8 @@
 #include "StringUtils.h"
 #include <algorithm>
+#include <cctype>
 
-using namespace thewizard::utils;
+using namespace thewizardplusplus::utils;
 
 std::string StringUtils::trim(const std::string& string,
 	unsigned int sides)
@@ -28,9 +29,9 @@ StringList StringUtils::split(const std::string& string,
 {
 	StringList parts;
 
-	size_t separator_length = separator.length();
+	size_t separator_length =         separator.length();
 	size_t previous_separator_index = 0;
-	size_t separator_index = 0;
+	size_t separator_index =          0;
 	while (true) {
 		separator_index = string.find(separator, separator_index);
 		if (separator_index != std::string::npos) {
@@ -48,7 +49,7 @@ StringList StringUtils::split(const std::string& string,
 			break;
 		}
 
-		separator_index += separator_length;
+		separator_index +=         separator_length;
 		previous_separator_index = separator_index;
 	}
 
@@ -71,12 +72,15 @@ StringList StringUtils::tokenize(const std::string& string,
 				true);
 
 			StringList::const_iterator parts_iterator = parts.begin();
-			for (; parts_iterator != parts.end(); ++parts_iterator) {
+			StringList::const_iterator parts_end =      parts.end();
+			StringList::const_iterator last_part =      parts_end;
+			last_part--;
+			for (; parts_iterator != parts_end; ++parts_iterator) {
 				std::string part = trim(*parts_iterator);
 				if (!part.empty()) {
 					new_tokens.push_back(part);
 				}
-				if (return_separators && parts_iterator != --parts.end()) {
+				if (return_separators && parts_iterator != last_part) {
 					new_tokens.push_back(*separators_iterator);
 				}
 			}

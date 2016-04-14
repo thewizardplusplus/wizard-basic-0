@@ -3,8 +3,8 @@
 #include <algorithm>
 #include <stdexcept>
 
-using namespace thewizard::nicole_compiler;
-using namespace thewizard::utils;
+using namespace thewizardplusplus::nicole_compiler;
+using namespace thewizardplusplus::utils;
 
 GnuAssembler::GnuAssembler(AssemblerModule* assembler_module) :
 	Assembler(assembler_module)

@@ -4,15 +4,14 @@
 #include "ExpressionCompiler.h"
 #include "AssemblerModule.h"
 
-using namespace thewizard::nicole_compiler;
-using namespace thewizard::nicole_compiler::exceptions;
-using namespace thewizard::utils;
+using namespace thewizardplusplus::nicole_compiler;
+using namespace thewizardplusplus::nicole_compiler::exceptions;
+using namespace thewizardplusplus::utils;
 
-const std::string GoToStatement::MARK =      "go to";
-const std::string GoToStatement::SEPARATOR = "";
+const std::string GoToStatement::MARK = "go to";
 
 GoToStatement::GoToStatement(Compiler* compiler) :
-	StatementCompiler(compiler, MARK, SEPARATOR)
+	StatementCompiler(compiler, MARK)
 {}
 
 void GoToStatement::compile(const StringList& code_line_parts) {

@@ -3,27 +3,27 @@
 
 #include "StringList.h"
 
-namespace thewizard {
+namespace thewizardplusplus {
 namespace utils {
 
 class CommandLineArguments {
 public:
-	static const int UNLIMITED_NUMBER_OF_ARGUMENTS = -1;
+	static const size_t UNLIMITED_NUMBER_OF_ARGUMENTS = -1;
 
-	CommandLineArguments(int minimal_number_of_arguments =
-		UNLIMITED_NUMBER_OF_ARGUMENTS, int maximal_number_of_arguments =
+	CommandLineArguments(size_t limit_of_number_of_arguments1 =
+		UNLIMITED_NUMBER_OF_ARGUMENTS, size_t limit_of_number_of_arguments2 =
 		UNLIMITED_NUMBER_OF_ARGUMENTS);
 	virtual ~CommandLineArguments(void);
-	void set(char** arguments, int number_of_arguments);
+	void set(const char * const * const arguments, size_t number_of_arguments);
 	std::string getProgramPath(void) const;
-	std::string getNextArgument(void);
 
 protected:
-	virtual void processArgument(const std::string& argument);
+	std::string getNextArgument(void);
+	virtual void processArgument(const std::string& argument) = 0;
 
 private:
-	int                        minimal_number_of_arguments;
-	int                        maximal_number_of_arguments;
+	size_t                     minimal_number_of_arguments;
+	size_t                     maximal_number_of_arguments;
 	StringList                 arguments;
 	StringList::const_iterator iterator;
 	std::string                program_path;

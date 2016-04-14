@@ -3,7 +3,7 @@
 
 #include "StatementCompiler.h"
 
-namespace thewizard {
+namespace thewizardplusplus {
 namespace nicole_compiler {
 
 class DefineStatement : public StatementCompiler {

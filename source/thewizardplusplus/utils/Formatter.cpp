@@ -2,16 +2,12 @@
 #include "Console.h"
 #include <sstream>
 
-using namespace thewizard::utils;
+using namespace thewizardplusplus::utils;
 
 Formatter::Formatter(const std::string& template_string) :
 	template_string(template_string),
 	current_index(0)
 {}
-
-Formatter::operator const char*(void) const {
-	return toString().c_str();
-}
 
 Formatter::operator std::string(void) const {
 	return toString();

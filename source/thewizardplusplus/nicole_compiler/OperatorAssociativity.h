@@ -1,7 +1,7 @@
 #ifndef OPERATORASSOCIATIVITY_H
 #define OPERATORASSOCIATIVITY_H
 
-namespace thewizard {
+namespace thewizardplusplus {
 namespace nicole_compiler {
 
 class OperatorAssociativity {

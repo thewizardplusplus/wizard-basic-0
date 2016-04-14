@@ -3,7 +3,7 @@
 
 #include "../utils/StringUtils.h"
 
-namespace thewizard {
+namespace thewizardplusplus {
 namespace nicole_compiler {
 
 class Compiler;

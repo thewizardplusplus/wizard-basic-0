@@ -4,9 +4,9 @@
 #include "ExpressionCompiler.h"
 #include "AssemblerModule.h"
 
-using namespace thewizard::nicole_compiler;
-using namespace thewizard::nicole_compiler::exceptions;
-using namespace thewizard::utils;
+using namespace thewizardplusplus::nicole_compiler;
+using namespace thewizardplusplus::nicole_compiler::exceptions;
+using namespace thewizardplusplus::utils;
 
 const std::string IfStatement::MARK =      "if";
 const std::string IfStatement::SEPARATOR = "then";

@@ -2,17 +2,16 @@
 #include "../utils/StringUtils.h"
 #include "Compiler.h"
 #include "AssemblerModule.h"
-#include "../utils/StringUtils.h"
 #include "exceptions/MissedFunctionArgumentSeparatorOrOpeningBracket.h"
 #include "exceptions/MissedOpeningBracket.h"
 #include "exceptions/MissedClosingBracket.h"
 #include "exceptions/UnknownExpressionToken.h"
-#include <cstddef>
 #include <algorithm>
+#include <cctype>
 
-using namespace thewizard::nicole_compiler;
-using namespace thewizard::utils;
-using namespace thewizard::nicole_compiler::exceptions;
+using namespace thewizardplusplus::nicole_compiler;
+using namespace thewizardplusplus::utils;
+using namespace thewizardplusplus::nicole_compiler::exceptions;
 
 const std::string ExpressionCompiler::INVALID_ARGUMENT_MESSAGE = "Unable to "
 	"construct ExpressionCompiler with null Compiler pointer.";
@@ -64,10 +63,6 @@ ExpressionCompiler::ExpressionCompiler(Compiler* compiler,
 			token_separators.push_back(token);
 		}
 	}
-
-	operator_tokens = operators.getOperatorTokens();
-	operator_tokens_end = operator_tokens.end();
-
 	token_separators.push_back(WHITESPACE);
 	token_separators.push_back(opening_bracket);
 	token_separators.push_back(closing_bracket);
@@ -75,11 +70,11 @@ ExpressionCompiler::ExpressionCompiler(Compiler* compiler,
 }
 
 void ExpressionCompiler::compile(const std::string& expression_code) {
-	tokens = StringUtils::tokenize(expression_code, token_separators, true);
+	utils::StringList tokens = StringUtils::tokenize(expression_code,
+		token_separators, true);
 
 	AssemblerModule* assembler_module = compiler->getAssemblerModule();
 	StringList stack;
-
 	StringList::const_iterator i = tokens.begin();
 	for (; i != tokens.end(); ++i) {
 		std::string token = *i;
@@ -183,7 +178,5 @@ void ExpressionCompiler::compile(const std::string& expression_code) {
 }
 
 bool ExpressionCompiler::isOperator(const std::string& token) const {
-	StringList::const_iterator result = std::find(operator_tokens.begin(),
-		operator_tokens_end, token);
-	return result != operator_tokens_end;
+	return operators.getOperatorByToken(token).isValid();
 }

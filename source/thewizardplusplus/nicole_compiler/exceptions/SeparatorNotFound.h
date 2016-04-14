@@ -2,8 +2,9 @@
 #define SEPARATORNOTFOUND_H
 
 #include "CompileException.h"
+#include "../StatementCompiler.h"
 
-namespace thewizard {
+namespace thewizardplusplus {
 namespace nicole_compiler {
 namespace exceptions {
 
@@ -11,7 +12,7 @@ class SeparatorNotFound : public CompileException {
 public:
 	static const std::string MESSAGE;
 
-	SeparatorNotFound(const std::string& mark, const std::string& separator);
+	SeparatorNotFound(StatementCompiler* statement_compiler);
 };
 
 }

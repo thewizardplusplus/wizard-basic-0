@@ -1,7 +1,7 @@
 #ifndef FORMATTERTEXTALIGN_H
 #define FORMATTERTEXTALIGN_H
 
-namespace thewizard {
+namespace thewizardplusplus {
 namespace utils {
 
 class FormatterTextAlign {

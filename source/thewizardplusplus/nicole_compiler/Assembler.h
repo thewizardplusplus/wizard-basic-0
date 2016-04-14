@@ -3,7 +3,7 @@
 
 #include "AssemblerModule.h"
 
-namespace thewizard {
+namespace thewizardplusplus {
 namespace nicole_compiler {
 
 class Assembler {
@@ -13,11 +13,10 @@ public:
 	Assembler(AssemblerModule* assembler_module);
 	virtual ~Assembler(void);
 	AssemblerModule* getAssemblerModule(void) const;
-	void assemble(const std::string& output_filename = std::string());
+	std::string getOutputFilename(void) const;
+	void assemble(const std::string& output_filename);
 
 protected:
-	std::string output_filename;
-
 	virtual void beforeAssemble(void);
 	virtual void processAssemblerMnemonic(
 		const AssemblerMnemonic& assembler_mnemonic) = 0;
@@ -25,6 +24,7 @@ protected:
 
 private:
 	AssemblerModule* assembler_module;
+	std::string      output_filename;
 };
 
 }

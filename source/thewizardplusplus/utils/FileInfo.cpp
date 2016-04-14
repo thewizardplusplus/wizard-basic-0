@@ -1,6 +1,6 @@
 #include "FileInfo.h"
 
-using namespace thewizard::utils;
+using namespace thewizardplusplus::utils;
 
 #ifdef OS_WINDOWS
 const std::string FileInfo::TYPES_OF_BEGINNING_OF_ABSOLUTE_PATHS =

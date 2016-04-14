@@ -3,9 +3,9 @@
 #include "Compiler.h"
 #include "ExpressionCompiler.h"
 
-using namespace thewizard::nicole_compiler;
-using namespace thewizard::nicole_compiler::exceptions;
-using namespace thewizard::utils;
+using namespace thewizardplusplus::nicole_compiler;
+using namespace thewizardplusplus::nicole_compiler::exceptions;
+using namespace thewizardplusplus::utils;
 
 const std::string FunctionCallStatement::MARK =      "";
 const std::string FunctionCallStatement::SEPARATOR = "";
@@ -20,8 +20,5 @@ void FunctionCallStatement::compile(const StringList& code_line_parts) {
 	}
 
 	std::string expression = code_line_parts.front();
-
-	ExpressionCompiler* expression_compiler = getCompiler()
-		->getExpressionCompiler();
-	expression_compiler->compile(expression);
+	getCompiler()->getExpressionCompiler()->compile(expression);
 }

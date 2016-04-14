@@ -3,13 +3,12 @@
 
 #include "StatementCompiler.h"
 
-namespace thewizard {
+namespace thewizardplusplus {
 namespace nicole_compiler {
 
 class EndStatement : public StatementCompiler {
 public:
 	static const std::string  MARK;
-	static const std::string  SEPARATOR;
 	static const unsigned int NUMBER_OF_CODE_LINE_PARTS = 1;
 
 	EndStatement(Compiler* compiler);

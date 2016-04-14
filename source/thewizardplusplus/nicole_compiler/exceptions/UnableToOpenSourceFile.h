@@ -3,7 +3,7 @@
 
 #include <stdexcept>
 
-namespace thewizard {
+namespace thewizardplusplus {
 namespace nicole_compiler {
 namespace exceptions {
 
@@ -11,7 +11,7 @@ class UnableToOpenSourceFile : public std::runtime_error {
 public:
 	static const std::string MESSAGE;
 
-	UnableToOpenSourceFile(const std::string& filname);
+	UnableToOpenSourceFile(const std::string& filename);
 };
 
 }

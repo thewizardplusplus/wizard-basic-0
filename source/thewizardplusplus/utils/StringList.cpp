@@ -1,7 +1,7 @@
 #include "StringList.h"
 #include "Formatter.h"
 
-using namespace thewizard::utils;
+using namespace thewizardplusplus::utils;
 
 const std::string StringList::ITEM    = "\"%0%\", ";
 const std::string StringList::MESSAGE = "StringList(%0%)";
@@ -26,13 +26,14 @@ std::string StringList::join(const std::string& separator) {
 
 std::string StringList::toString(void) const {
 	std::string items;
+
 	const_iterator i = begin();
 	for (; i != end(); ++i) {
-		items += Formatter(ITEM).setArgument(*i).toString();
+		items += Formatter(ITEM).setArgument(*i);
 	}
 	if (!empty()) {
 		items = items.substr(0, items.length() - ITEM_SUFFIX_LENGTH);
 	}
 
-	return Formatter(MESSAGE) << items;
+	return Formatter(MESSAGE).setArgument(items);
 }

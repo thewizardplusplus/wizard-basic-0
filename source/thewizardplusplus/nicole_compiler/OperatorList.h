@@ -4,12 +4,11 @@
 #include "Operator.h"
 #include "../utils/StringList.h"
 
-namespace thewizard {
+namespace thewizardplusplus {
 namespace nicole_compiler {
 
 class OperatorList : public std::list<Operator> {
 public:
-	utils::StringList getOperatorTokens(void) const;
 	Operator getOperatorByToken(const std::string& token) const;
 };
 

@@ -1,6 +1,6 @@
 #include "MissedOpeningBracket.h"
 
-using namespace thewizard::nicole_compiler::exceptions;
+using namespace thewizardplusplus::nicole_compiler::exceptions;
 
 const std::string MissedOpeningBracket::MESSAGE = "missed opening bracket";
 

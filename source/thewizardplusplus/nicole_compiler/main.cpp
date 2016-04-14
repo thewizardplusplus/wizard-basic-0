@@ -17,9 +17,10 @@
 #include "FunctionCallStatement.h"
 #include "GnuAssembler.h"
 #include "../utils/Console.h"
+#include <cstdlib>
 
-using namespace thewizard::nicole_compiler;
-using namespace thewizard::utils;
+using namespace thewizardplusplus::nicole_compiler;
+using namespace thewizardplusplus::utils;
 
 int main(int number_of_arguments, char** arguments) {
 	try {
@@ -36,8 +37,8 @@ int main(int number_of_arguments, char** arguments) {
 		Console::information() << "Preprocessing...";
 		CodeLines code_lines = preprocessor_manager.preprocess(
 			compiler_console_parameters.getSourcePath());
-		Console::information() << code_lines.toString();
-		Console::information() << "";
+		Console::information() << code_lines;
+		Console::information().emptyLine();
 
 		AssemblerModule assembler_module;
 		StringList inbuilt_function = StringUtils::split(LanguageElements
@@ -96,14 +97,16 @@ int main(int number_of_arguments, char** arguments) {
 
 		Console::information() << "Compiling...";
 		compiler.compile(code_lines);
-		Console::information() << "";
+		Console::information() << assembler_module.getAssemblerCode();
+		Console::information().emptyLine();
 
-		GnuAssembler assembler(&assembler_module);
+		/*GnuAssembler assembler(&assembler_module);
 
 		Console::information() << "Assembling...";
 		assembler.assemble(compiler_console_parameters.getOutputPath());
-		Console::information() << assembler.getAssemblerCode();
+		Console::information() << assembler.getAssemblerCode();*/
 	} catch (const std::exception& exception) {
 		Console::error() << exception.what();
+		return EXIT_FAILURE;
 	}
 }

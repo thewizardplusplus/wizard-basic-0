@@ -4,7 +4,7 @@
 #include <list>
 #include <string>
 
-namespace thewizard {
+namespace thewizardplusplus {
 namespace utils {
 
 class StringList : public std::list<std::string> {

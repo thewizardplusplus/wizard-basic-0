@@ -4,7 +4,7 @@
 #include "OperatorList.h"
 #include "../utils/StringList.h"
 
-namespace thewizard {
+namespace thewizardplusplus {
 namespace nicole_compiler {
 
 class Compiler;
@@ -28,12 +28,9 @@ private:
 	Compiler*                         compiler;
 	OperatorList                      operators;
 	utils::StringList                 token_separators;
-	utils::StringList                 operator_tokens;
-	utils::StringList::const_iterator operator_tokens_end;
 	std::string                       opening_bracket;
 	std::string                       closing_bracket;
 	std::string                       function_argument_separator;
-	utils::StringList                 tokens;
 
 	bool isOperator(const std::string& token) const;
 };

@@ -3,7 +3,7 @@
 
 #include "CompileException.h"
 
-namespace thewizard {
+namespace thewizardplusplus {
 namespace nicole_compiler {
 namespace exceptions {
 

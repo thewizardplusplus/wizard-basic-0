@@ -1,6 +1,6 @@
 #include "InvalidStringFormat.h"
 
-using namespace thewizard::nicole_compiler::exceptions;
+using namespace thewizardplusplus::nicole_compiler::exceptions;
 
 const std::string InvalidStringFormat::MESSAGE = "invalid string format - "
 	"required quotes";

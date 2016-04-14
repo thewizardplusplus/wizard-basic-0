@@ -4,18 +4,21 @@
 #include "../utils/CommandLineArguments.h"
 #include "../utils/os.h"
 
-namespace thewizard {
+namespace thewizardplusplus {
 namespace nicole_compiler {
 
 class CompilerConsoleParameters : public utils::CommandLineArguments {
 public:
-	static const int         NUMBER_OF_ARGUMENTS = 1;
-	static const std::string VERSION_KEY_SHORT;
-	static const std::string VERSION_KEY_LONG;
+	static const int         NUMBER_OF_ARGUMENTS =    1;
+	static const std::string VERSION_OPTION_SHORT;
+	static const std::string VERSION_OPTION_LONG;
 	static const std::string VERSION_MESSAGE;
-	static const std::string HELP_KEY_SHORT;
-	static const std::string HELP_KEY_LONG;
+	static const std::string HELP_OPTION_SHORT;
+	static const std::string HELP_OPTION_LONG;
 	static const std::string HELP_MESSAGE;
+	static const std::string OPTION_PREFIX_SHORT;
+	static const std::string OPTION_PREFIX_LONG;
+	static const std::string UNKNOWN_OPTION_MESSAGE;
 	#ifdef OS_WINDOWS
 	static const std::string OUTPUT_FILE_EXTENSION;
 	#endif

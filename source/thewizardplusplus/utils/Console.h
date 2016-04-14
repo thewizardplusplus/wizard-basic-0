@@ -6,7 +6,7 @@
 #include <string>
 #include <iostream>
 
-namespace thewizard {
+namespace thewizardplusplus {
 namespace utils {
 
 class Console {
@@ -25,6 +25,7 @@ public:
 	inline Console& operator<<(Type message);
 	Console& operator<<(const char* message);
 	Console& operator<<(std::string message);
+	void emptyLine(void);
 
 private:
 	ConsoleMessageType::Types message_type;

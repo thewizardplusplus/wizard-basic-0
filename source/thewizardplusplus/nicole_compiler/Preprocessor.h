@@ -3,7 +3,7 @@
 
 #include "CodeLines.h"
 
-namespace thewizard {
+namespace thewizardplusplus {
 namespace nicole_compiler {
 
 class Preprocessor {

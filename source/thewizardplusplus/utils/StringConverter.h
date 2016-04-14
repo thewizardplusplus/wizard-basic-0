@@ -3,7 +3,7 @@
 
 #include "StringConverterHelper.h"
 
-namespace thewizard {
+namespace thewizardplusplus {
 namespace utils {
 
 class StringConverter {

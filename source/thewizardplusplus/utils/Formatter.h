@@ -5,7 +5,7 @@
 #include "StringConverter.h"
 #include <string>
 
-namespace thewizard {
+namespace thewizardplusplus {
 namespace utils {
 
 class Formatter {
@@ -16,7 +16,6 @@ public:
 	Formatter(const std::string& template_string);
 	template<typename Type>
 	Formatter& operator<<(Type argument);
-	operator const char*(void) const;
 	operator std::string(void) const;
 	template<typename Type>
 	Formatter& setArgument(Type argument, size_t field_width = 0,

@@ -1,6 +1,7 @@
 #include "CommentDeleter.h"
+#include <cctype>
 
-using namespace thewizard::nicole_compiler;
+using namespace thewizardplusplus::nicole_compiler;
 
 CommentDeleter::CommentDeleter(const std::string& comment_mark) :
 	comment_mark(comment_mark),
@@ -17,7 +18,11 @@ void CommentDeleter::preprocess(CodeLines& code_lines) {
 			comment_mark_length) == comment_mark && std::isspace(code_line[
 			comment_mark_length])) || code_line == comment_mark)
 		{
-			code_lines.erase(i++);
+			CodeLines::iterator next_i = i;
+			next_i++;
+
+			code_lines.erase(i);
+			i = next_i;
 		} else {
 			++i;
 		}

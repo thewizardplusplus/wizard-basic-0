@@ -4,7 +4,7 @@
 #include "os.h"
 #include <string>
 
-namespace thewizard {
+namespace thewizardplusplus {
 namespace utils {
 
 class FileInfo {

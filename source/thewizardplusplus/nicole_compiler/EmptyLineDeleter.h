@@ -3,7 +3,7 @@
 
 #include "Preprocessor.h"
 
-namespace thewizard {
+namespace thewizardplusplus {
 namespace nicole_compiler {
 
 class EmptyLineDeleter : public Preprocessor {

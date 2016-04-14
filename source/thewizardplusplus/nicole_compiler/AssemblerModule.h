@@ -1,17 +1,16 @@
 #ifndef ASSEMBLERMODULE_H
 #define ASSEMBLERMODULE_H
 
-#include "AssemblerMnemonic.h"
+#include "AssemblerCode.h"
 #include "Operator.h"
 #include "../utils/StringList.h"
 #include <map>
 
-namespace thewizard {
+namespace thewizardplusplus {
 namespace nicole_compiler {
 
 class AssemblerModule {
 public:
-	typedef std::list<AssemblerMnemonic>       AssemblerCode;
 	typedef std::map<std::string, std::string> StringConstantMap;
 
 	static const std::string PUSH_NUMBER_MNEMONIC_NAME;

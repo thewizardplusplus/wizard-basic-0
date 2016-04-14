@@ -2,8 +2,8 @@
 #include "../utils/Formatter.h"
 #include <stdexcept>
 
-using namespace thewizard::nicole_compiler;
-using namespace thewizard::utils;
+using namespace thewizardplusplus::nicole_compiler;
+using namespace thewizardplusplus::utils;
 
 const std::string StatementCompiler::INVALID_ARGUMENT_MESSAGE = "Unable to "
 	"construct StatementCompiler(\"%0%\", \"%1%\") with null Compiler pointer.";

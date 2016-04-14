@@ -7,9 +7,9 @@
 #include "exceptions/SeparatorNotFound.h"
 #include <stdexcept>
 
-using namespace thewizard::nicole_compiler;
-using namespace thewizard::nicole_compiler::exceptions;
-using namespace thewizard::utils;
+using namespace thewizardplusplus::nicole_compiler;
+using namespace thewizardplusplus::nicole_compiler::exceptions;
+using namespace thewizardplusplus::utils;
 
 const std::string Compiler::INVALID_ARGUMENT_MESSAGE = "Unable to construct "
 	"Compiler with null AssemblerModule pointer.";
@@ -35,9 +35,10 @@ Compiler::~Compiler(void) {
 		default_statement_compiler = NULL;
 	}
 
-	StatementCompilerList::const_iterator i = statement_compilers.begin();
+	StatementCompilerList::iterator i = statement_compilers.begin();
 	for (; i != statement_compilers.end(); ++i) {
 		delete *i;
+		*i = NULL;
 	}
 }
 
@@ -138,7 +139,7 @@ bool Compiler::transmitCodeLineToStatementCompiler(const std::string& code_line,
 					truncated_code_line.substr(separator_index +
 					separator_length)));
 			} else {
-				throw SeparatorNotFound(mark, separator);
+				throw SeparatorNotFound(statement_compiler);
 			}
 		} else {
 			code_line_parts.push_back(truncated_code_line);

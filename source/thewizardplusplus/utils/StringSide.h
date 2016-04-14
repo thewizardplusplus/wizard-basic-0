@@ -1,7 +1,7 @@
 #ifndef STRINGSIDE_H
 #define STRINGSIDE_H
 
-namespace thewizard {
+namespace thewizardplusplus {
 namespace utils {
 
 class StringSide {

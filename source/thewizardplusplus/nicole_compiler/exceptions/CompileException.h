@@ -3,7 +3,7 @@
 
 #include <stdexcept>
 
-namespace thewizard {
+namespace thewizardplusplus {
 namespace nicole_compiler {
 namespace exceptions {
 
@@ -14,7 +14,6 @@ public:
 	CompileException(const std::string& message);
 	virtual ~CompileException(void) throw();
 	virtual const char* what(void) const throw();
-	unsigned long int getLineNumber(void) const;
 	void setLineNumber(unsigned long int line_number);
 
 private:

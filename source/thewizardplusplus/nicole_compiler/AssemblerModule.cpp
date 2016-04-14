@@ -11,9 +11,9 @@
 #include "ExpressionCompiler.h"
 #include <algorithm>
 
-using namespace thewizard::nicole_compiler;
-using namespace thewizard::nicole_compiler::exceptions;
-using namespace thewizard::utils;
+using namespace thewizardplusplus::nicole_compiler;
+using namespace thewizardplusplus::nicole_compiler::exceptions;
+using namespace thewizardplusplus::utils;
 
 const std::string AssemblerModule::PUSH_NUMBER_MNEMONIC_NAME =     "pushn";
 const std::string AssemblerModule::PUSH_VARIABLE_MNEMONIC_NAME =   "pushv";
@@ -31,7 +31,7 @@ AssemblerModule::AssemblerModule(void) :
 	last_conditional_jump_id(DEFAULT_LAST_CONDITIONAL_JUMP_ID)
 {}
 
-AssemblerModule::AssemblerCode AssemblerModule::getAssemblerCode(void) const {
+AssemblerCode AssemblerModule::getAssemblerCode(void) const {
 	return assembler_code;
 }
 

@@ -2,11 +2,11 @@
 #include "../utils/StringConverter.h"
 #include "../utils/Formatter.h"
 
-using namespace thewizard::nicole_compiler;
-using namespace thewizard::utils;
+using namespace thewizardplusplus::nicole_compiler;
+using namespace thewizardplusplus::utils;
 
-const std::string CodeLines::CODE_LINE_STRING_TEMPLATE = "%0% %1%";
-const char        CodeLines::CODE_LINE_SEPARATOR =       '\n';
+const std::string CodeLines::CODE_LINE_STRING_TEMPLATE = "%0% %1%%2%";
+const std::string CodeLines::CODE_LINE_SEPARATOR =       "\n";
 
 CodeLines::operator std::string(void) const {
 	return toString();
@@ -24,11 +24,11 @@ std::string CodeLines::toString(void) const {
 	const_iterator i = begin();
 	for (; i != end(); ++i) {
 		result += Formatter(CODE_LINE_STRING_TEMPLATE).setArgument(i->first,
-			maximal_line_number_width).setArgument(i->second).toString() +
-			CODE_LINE_SEPARATOR;
+			maximal_line_number_width).setArgument(i->second).setArgument(
+			CODE_LINE_SEPARATOR);
 	}
 	if (!empty()) {
-		result = result.substr(0, result.length() - 1);
+		result = result.substr(0, result.length() - CODE_LINE_SEPARATOR_LENGTH);
 	}
 
 	return result;

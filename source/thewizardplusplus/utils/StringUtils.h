@@ -4,7 +4,7 @@
 #include "StringSide.h"
 #include "StringList.h"
 
-namespace thewizard {
+namespace thewizardplusplus {
 namespace utils {
 
 class StringUtils {

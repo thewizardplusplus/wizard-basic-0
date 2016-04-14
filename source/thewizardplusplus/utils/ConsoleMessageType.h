@@ -1,7 +1,7 @@
 #ifndef CONSOLEMESSAGETYPE_H
 #define CONSOLEMESSAGETYPE_H
 
-namespace thewizard {
+namespace thewizardplusplus {
 namespace utils {
 
 class ConsoleMessageType {

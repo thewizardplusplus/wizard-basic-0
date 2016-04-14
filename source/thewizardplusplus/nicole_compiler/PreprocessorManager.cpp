@@ -3,8 +3,8 @@
 #include "Preprocessor.h"
 #include <fstream>
 
-using namespace thewizard::nicole_compiler;
-using namespace thewizard::nicole_compiler::exceptions;
+using namespace thewizardplusplus::nicole_compiler;
+using namespace thewizardplusplus::nicole_compiler::exceptions;
 
 PreprocessorManager::PreprocessorManager(const PreprocessorList& preprocessors)
 :
@@ -12,9 +12,10 @@ PreprocessorManager::PreprocessorManager(const PreprocessorList& preprocessors)
 {}
 
 PreprocessorManager::~PreprocessorManager(void) {
-	PreprocessorList::const_iterator i = preprocessors.begin();
+	PreprocessorList::iterator i = preprocessors.begin();
 	for (; i != preprocessors.end(); ++i) {
 		delete (*i);
+		*i = NULL;
 	}
 }
 

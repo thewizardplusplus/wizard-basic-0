@@ -1,8 +1,8 @@
 #include "LineTrimmer.h"
 #include "../utils/StringUtils.h"
 
-using namespace thewizard::nicole_compiler;
-using namespace thewizard::utils;
+using namespace thewizardplusplus::nicole_compiler;
+using namespace thewizardplusplus::utils;
 
 void LineTrimmer::preprocess(CodeLines& code_lines) {
 	CodeLines::iterator i = code_lines.begin();

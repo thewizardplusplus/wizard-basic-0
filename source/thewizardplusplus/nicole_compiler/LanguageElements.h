@@ -4,7 +4,7 @@
 #include "OperatorAssociativity.h"
 #include <string>
 
-namespace thewizard {
+namespace thewizardplusplus {
 namespace nicole_compiler {
 
 class LanguageElements {
