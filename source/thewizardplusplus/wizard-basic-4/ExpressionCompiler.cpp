@@ -8,6 +8,7 @@
 #include "exceptions/UnknownExpressionToken.h"
 #include <algorithm>
 #include <cctype>
+#include <cstddef>
 
 using namespace thewizardplusplus::wizard_basic_4;
 using namespace thewizardplusplus::utils;

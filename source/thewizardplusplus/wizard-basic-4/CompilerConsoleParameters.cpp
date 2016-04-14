@@ -22,7 +22,7 @@ const std::string CompilerConsoleParameters::HELP_OPTION_LONG =
 	"--help";
 const std::string CompilerConsoleParameters::HELP_MESSAGE =
 	"Usage:\n"
-	"\twizard_basic_4 (option|filename)\n"
+	"\twb4 (option|filename)\n"
 	"\n"
 	"Option:\n"
 	"\t-v, --version - display compiler version;\n"
