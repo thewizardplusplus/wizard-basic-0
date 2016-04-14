@@ -41,7 +41,7 @@ public:
 	void createPopToVariable(const std::string& identifier);
 	void createOperator(const Operator& operator_object);
 	void createFunctionCall(const std::string& identifier);
-	void createJump(void);
+	void createJump(const std::string& label);
 	void createLabel(const std::string& label);
 	void createConditionalJump(void);
 	void createLabelForConditionalJump(void);

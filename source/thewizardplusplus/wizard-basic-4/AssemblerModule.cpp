@@ -124,8 +124,8 @@ void AssemblerModule::createFunctionCall(const std::string& identifier) {
 	assembler_code.push_back(AssemblerMnemonic(CALL_MNEMONIC_NAME, identifier));
 }
 
-void AssemblerModule::createJump(void) {
-	assembler_code.push_back(AssemblerMnemonic(JUMP_MNEMONIC_NAME));
+void AssemblerModule::createJump(const std::string& label) {
+	assembler_code.push_back(AssemblerMnemonic(JUMP_MNEMONIC_NAME, label));
 }
 
 void AssemblerModule::createLabel(const std::string& label) {

@@ -1,6 +1,5 @@
 note The program, calculated the number pi (by the Gauss–Legendre algorithm).
 
-	define LOOP_LABEL as "loop"
 	define MESSAGE    as "Pi = "
 	define DOT        as "."
 	define NEW_LINE   as "\n"
@@ -17,7 +16,7 @@ label loop
 	let new_t = t - p * (a - new_a) * (a - new_a)
 	let new_p = 2 * p
 	if Abs(a - b) > ERROR then
-		go to LOOP_LABEL
+		go to loop
 	end
 
 	let pi = (a + b) * (a + b) / (4 * t)

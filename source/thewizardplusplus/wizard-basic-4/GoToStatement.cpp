@@ -19,7 +19,6 @@ void GoToStatement::compile(const StringList& code_line_parts) {
 		throw InvalidNumberOfCodeLineParts();
 	}
 
-	std::string expression = code_line_parts.front();
-	getCompiler()->getExpressionCompiler()->compile(expression);
-	getCompiler()->getAssemblerModule()->createJump();
+	std::string label = code_line_parts.front();
+	getCompiler()->getAssemblerModule()->createJump(label);
 }
