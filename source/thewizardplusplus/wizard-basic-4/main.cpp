@@ -49,12 +49,10 @@ int main(int number_of_arguments, char** arguments) {
 		}
 
 		AssemblerModule assembler_module;
-		StringList inbuilt_function = StringUtils::split(LanguageElements
-			::INBUILT_FUNCTIONS, LanguageElements::INBUILT_FUNCTION_SEPARATOR,
-			false);
-		StringList::const_iterator i = inbuilt_function.begin();
-		for (; i != inbuilt_function.end(); ++i) {
-			assembler_module.addFunctionIdentifier(*i);
+		LanguageElements::FunctionInfoMap::const_iterator i =
+			LanguageElements::INBUILT_FUNCTIONS.begin();
+		for (; i != LanguageElements::INBUILT_FUNCTIONS.end(); ++i) {
+			assembler_module.addFunctionIdentifier(i->first);
 		}
 
 		Compiler compiler(&assembler_module);

@@ -27,6 +27,7 @@ OBJECTS = \
 	$(SOURCE_COMPILER)IfStatement.o \
 	$(SOURCE_COMPILER)GoToStatement.o \
 	$(SOURCE_COMPILER)GnuAssembler.o \
+	$(SOURCE_COMPILER)FunctionInfo.o \
 	$(SOURCE_COMPILER)FunctionCallStatement.o \
 	$(SOURCE_COMPILER)FinalState.o \
 	$(SOURCE_COMPILER)ExpressionCompiler.o \

@@ -1,14 +1,18 @@
 #ifndef LANGUAGEELEMENTS_H
 #define LANGUAGEELEMENTS_H
 
+#include "FunctionInfo.h"
 #include "OperatorAssociativity.h"
 #include <string>
+#include <map>
 
 namespace thewizardplusplus {
 namespace wizard_basic_4 {
 
 class LanguageElements {
 public:
+	typedef std::map<std::string, FunctionInfo> FunctionInfoMap;
+
 	static const std::string                  COMMENT_MARK;
 	static const std::string                  ADD_OPERATOR_TOKEN;
 	static const int                          ADD_OPERATOR_PRECEDENCE =      4;
@@ -53,8 +57,11 @@ public:
 	static const std::string                  OPENING_BRACKET;
 	static const std::string                  CLOSING_BRACKET;
 	static const std::string                  FUNCTION_ARGUMENT_SEPARATOR;
-	static const std::string                  INBUILT_FUNCTION_SEPARATOR;
-	static const std::string                  INBUILT_FUNCTIONS;
+	static const FunctionInfoMap              INBUILT_FUNCTIONS;
+
+	static FunctionInfoMap initFunctionInfoMap();
+	static std::string getOperatorFunction(const std::string&
+		operator_identifier);
 };
 
 }

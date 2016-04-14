@@ -5,7 +5,7 @@ note The program, drawing a maze (ported from BASIC).
 	define BACKSLASH   as "\\"
 
 label start
-	let factor = Random(0, 1)
+	let factor = Rand()
 	if factor > 0.5 then
 		ShowString(SLASH)
 	end

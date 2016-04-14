@@ -23,8 +23,9 @@ private:
 	std::string      assembler_code;
 	FloatConstantMap float_constants;
 
-	std::string getFloatConstantName(std::string value);
-	int getVariableShift(std::string identifier);
+	std::string getFloatConstantName(const std::string& value);
+	int getVariableShift(const std::string& identifier) const;
+	void makeFunctionCall(const std::string& function_name);
 };
 
 }
