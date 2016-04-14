@@ -65,7 +65,10 @@ void GnuAssembler::processAssemblerMnemonic(
 	} else if (mnemonic == AssemblerModule::JUMP_MNEMONIC_NAME) {
 		assembler_code += "\tjmp " + assembler_mnemonic.getOperand() + "\n";
 	} else if (mnemonic == AssemblerModule::JUMP_IF_ZERO_MNEMONIC_NAME) {
-		assembler_code += "\tjz " + assembler_mnemonic.getOperand() + "\n";
+		assembler_code +=
+			std::string("\tcmp $0, (%esp)\n")
+			+ "\tpop %eax\n"
+			+ "\tje " + assembler_mnemonic.getOperand() + "\n";
 	} else {
 		throw std::runtime_error("Unknown assembler mnemonic.");
 	}
