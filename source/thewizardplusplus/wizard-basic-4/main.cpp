@@ -44,7 +44,7 @@ int main(int number_of_arguments, char** arguments) {
 		FinalState::Types final_state = compiler_console_parameters
 			.getFinalState();
 		if (final_state == FinalState::PREPROCESSED_CODE) {
-			Console::information() << code_lines;
+			Console::information() << code_lines.toString();
 			std::exit(EXIT_SUCCESS);
 		}
 
@@ -105,7 +105,8 @@ int main(int number_of_arguments, char** arguments) {
 
 		compiler.compile(code_lines);
 		if (final_state == FinalState::BYTE_CODE) {
-			Console::information() << assembler_module.getAssemblerCode();
+			Console::information() << assembler_module.getAssemblerCode()
+				.toString();
 			std::exit(EXIT_SUCCESS);
 		}
 

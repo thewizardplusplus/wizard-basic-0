@@ -44,7 +44,7 @@ void Console::error(Type message) {
 
 template<typename Type>
 Console& Console::operator<<(Type message) {
-	return operator<<(StringConverter::convert(message).toString());
+	return operator<<(StringConverter::convert(message));
 }
 
 }

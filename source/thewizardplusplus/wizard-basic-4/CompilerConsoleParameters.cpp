@@ -67,7 +67,7 @@ FinalState::Types CompilerConsoleParameters::getFinalState(void) const {
 void CompilerConsoleParameters::processArgument(const std::string& argument) {
 	if (argument == VERSION_OPTION_SHORT || argument == VERSION_OPTION_LONG) {
 		Console::information() << Formatter(VERSION_MESSAGE).setArgument(
-			CurrentVersion::STRING_VERSION);
+			CurrentVersion::STRING_VERSION).toString();
 		std::exit(EXIT_SUCCESS);
 	} else if (argument == HELP_OPTION_SHORT || argument == HELP_OPTION_LONG) {
 		Console::information() << HELP_MESSAGE;

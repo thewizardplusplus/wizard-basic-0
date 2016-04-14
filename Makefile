@@ -6,7 +6,7 @@ SOURCE_COMPILER_EXCEPTIONS = $(SOURCE_COMPILER)exceptions/
 OBJECTS = \
 	$(SOURCE_UTILS)StringUtils.o \
 	$(SOURCE_UTILS)StringList.o \
-	$(SOURCE_UTILS)StringConverterHelper.o \
+	$(SOURCE_UTILS)StringConverter.o \
 	$(SOURCE_UTILS)Formatter.o \
 	$(SOURCE_UTILS)FileInfo.o \
 	$(SOURCE_UTILS)Console.o \

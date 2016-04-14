@@ -25,7 +25,7 @@ void GnuAssembler::beforeAssemble(void) {
 		.size() - getAssemblerModule()->getDefinedStringConstants().size();
 	if (number_of_variables != 0) {
 		assembler_code += "\tenter " + StringConverter::convert(4 *
-			number_of_variables).toString() + ", 0\n" + "\t\n";
+			number_of_variables) + ", 0\n" + "\t\n";
 	}
 }
 
@@ -44,11 +44,10 @@ void GnuAssembler::processAssemblerMnemonic(
 			"\tpushl %eax\n";
 	} else if (mnemonic == AssemblerModule::PUSH_VARIABLE_MNEMONIC_NAME) {
 		assembler_code += "\tpushl " + StringConverter::convert(
-			getVariableShift(assembler_mnemonic.getOperand())).toString() +
-			"(%ebp)\n";
+			getVariableShift(assembler_mnemonic.getOperand())) + "(%ebp)\n";
 	} else if (mnemonic == AssemblerModule::POP_VARIABLE_MNEMONIC_NAME) {
 		assembler_code += "\tpopl " + StringConverter::convert(getVariableShift(
-			assembler_mnemonic.getOperand())).toString() + "(%ebp)\n";
+			assembler_mnemonic.getOperand())) + "(%ebp)\n";
 	} else if (mnemonic == AssemblerModule::DO_MNEMONIC_NAME) {
 		assembler_code += "\tdo " + assembler_mnemonic.getOperand() + "\n";
 	} else if (mnemonic == AssemblerModule::CALL_MNEMONIC_NAME) {
@@ -95,7 +94,7 @@ std::string GnuAssembler::getFloatConstantName(std::string value) {
 		return i->second;
 	} else {
 		std::string name = "FLOAT_CONSTANT" + StringConverter::convert(
-			float_constants.size()).toString();
+			float_constants.size());
 		float_constants[value] = name;
 		return name;
 	}

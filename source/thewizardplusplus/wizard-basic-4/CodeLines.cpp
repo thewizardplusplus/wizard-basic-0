@@ -18,7 +18,7 @@ std::string CodeLines::toString(void) const {
 		maximal_line_number = rbegin()->first;
 	}
 	size_t maximal_line_number_width = StringConverter::convert(
-		maximal_line_number).toString().length();
+		maximal_line_number).length();
 
 	std::string result;
 	const_iterator i = begin();

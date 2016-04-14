@@ -44,8 +44,8 @@ template<typename Type>
 Formatter& Formatter::setArgument(Type argument, size_t field_width,
 	FormatterTextAlign::Types text_align, char fill_char)
 {
-	setArgument(StringConverter::convert(argument).toString(), field_width,
-		text_align, fill_char);
+	setArgument(StringConverter::convert(argument), field_width, text_align,
+		fill_char);
 	return *this;
 }
 
