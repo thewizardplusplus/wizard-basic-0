@@ -1,0 +1,35 @@
+	define NEW_LINE as "\n"
+	let FALSE =        0
+	let TRUE =         1
+
+	ShowNumber(2)
+	ShowString(NEW_LINE)
+
+	let number = 3
+
+label number_loop
+	let is_prime =    TRUE
+	let number_half = number / 2
+	let i =           3
+	label test_loop
+		if i > number_half or i = number_half then
+			go to test_loop_end
+		end
+
+		let quotient = number / i
+		if quotient = Trunc(quotient) then
+			let is_prime = FALSE
+			go to test_loop_end
+		end
+
+		let i = i + 2
+		go to test_loop
+	label test_loop_end
+
+	if is_prime then
+		ShowNumber(number)
+		ShowString(NEW_LINE)
+	end
+
+	let number = number + 2
+	go to number_loop

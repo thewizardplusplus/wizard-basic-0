@@ -1,0 +1,18 @@
+	define NEW_LINE as "\n"
+
+	let n_2 = 0
+	let n_1 = 0
+
+label loop
+	let n = n_2 + n_1
+	if n = 0 then
+		let n = 1
+	end
+
+	ShowNumber(n)
+	ShowString(NEW_LINE)
+
+	let n_2 = n_1
+	let n_1 = n
+
+	go to loop
