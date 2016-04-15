@@ -67,6 +67,7 @@ OBJECTS = \
 	$(SOURCE_COMPILER_EXCEPTIONS)FailedOpenTemporaryFileException.o \
 	$(SOURCE_COMPILER_EXCEPTIONS)EndWithoutIf.o \
 	$(SOURCE_COMPILER_EXCEPTIONS)CompileException.o \
+	$(SOURCE_COMPILER_EXCEPTIONS)AttemptToConstantChange.o \
 	$(SOURCE_COMPILER_EXCEPTIONS)AssemblingOrLinkingException.o
 BUILD = ../build/
 CXXFLAGS += -std=c++03 -Wpedantic -Wall -Wextra -O3

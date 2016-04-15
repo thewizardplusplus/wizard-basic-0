@@ -27,6 +27,7 @@ public:
 
 	AssemblerModule(void);
 	AssemblerCode getAssemblerCode(void) const;
+	bool isDefinedStringConstants(const std::string& identifier) const;
 	StringConstantMap getDefinedStringConstants(void) const;
 	bool isDefinedVariable(const std::string& identifier) const;
 	utils::StringList getDefinedVariables(void) const;

@@ -1,5 +1,6 @@
 #include "AssemblerModule.h"
 #include "exceptions/UndefinedVariable.h"
+#include "exceptions/AttemptToConstantChange.h"
 #include "exceptions/UndefinedFunction.h"
 #include "exceptions/EndWithoutIf.h"
 #include "exceptions/IfWithoutEnd.h"
@@ -33,6 +34,12 @@ AssemblerModule::AssemblerModule(void) :
 
 AssemblerCode AssemblerModule::getAssemblerCode(void) const {
 	return assembler_code;
+}
+
+bool AssemblerModule::isDefinedStringConstants(const std::string& identifier)
+	const
+{
+	return string_constants.count(identifier);
 }
 
 AssemblerModule::StringConstantMap AssemblerModule::getDefinedStringConstants(
@@ -105,6 +112,9 @@ void AssemblerModule::createPushForVariable(const std::string& identifier) {
 void AssemblerModule::createPopToVariable(const std::string& identifier) {
 	if (!isDefinedVariable(identifier)) {
 		throw UndefinedVariable(identifier);
+	}
+	if (isDefinedStringConstants(identifier)) {
+		throw AttemptToConstantChange(identifier);
 	}
 
 	assembler_code.push_back(AssemblerMnemonic(POP_VARIABLE_MNEMONIC_NAME,
