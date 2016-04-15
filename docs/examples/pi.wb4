@@ -1,0 +1,28 @@
+	note The program, which calculates the pi number (by the Gauss–Legendre
+	note algorithm).
+
+	define MESSAGE as  "Pi = "
+	define DOT as      "."
+	define NEW_LINE as "\n"
+	let    ERROR =     0.000001
+
+	let a = 1
+	let b = 1 / Sqrt(2)
+	let t = 1 / 4
+	let p = 1
+
+label loop
+	let previous_a = a
+	let a =          (previous_a + b) / 2
+	let b =          Sqrt(previous_a * b)
+	let t =          t - p * (previous_a - a) * (previous_a - a)
+	let p =          2 * p
+	if Abs(a - b) > ERROR then
+		go to loop
+	end
+
+	let pi = (a + b) * (a + b) / (4 * t)
+	ShowString(MESSAGE)
+	ShowNumber(pi)
+	ShowString(DOT)
+	ShowString(NEW_LINE)
