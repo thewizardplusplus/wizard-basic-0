@@ -25,7 +25,7 @@ const std::string AssemblerModule::JUMP_MNEMONIC_NAME =            "jmp";
 const std::string AssemblerModule::JUMP_IF_ZERO_MNEMONIC_NAME =    "jz";
 const std::string AssemblerModule::CONDITIONAL_JUMP_LABEL_FORMAT = "%0%%1%";
 const std::string AssemblerModule::CONDITIONAL_JUMP_BASE_LABEL =
-	"conditional_jump";
+	"conditional_jump_";
 
 AssemblerModule::AssemblerModule(void) :
 	last_conditional_jump_id(DEFAULT_LAST_CONDITIONAL_JUMP_ID)

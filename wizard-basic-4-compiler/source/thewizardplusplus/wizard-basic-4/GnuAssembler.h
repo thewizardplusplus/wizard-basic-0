@@ -22,6 +22,7 @@ private:
 	FloatConstantMap float_constants;
 
 	std::string getFloatConstantName(const std::string& value);
+	std::string getVariableLink(const std::string& identifier) const;
 	int getVariableShift(const std::string& identifier) const;
 	void makeFunctionCall(const std::string& function_name);
 };

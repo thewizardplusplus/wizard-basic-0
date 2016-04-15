@@ -17,15 +17,14 @@ GnuAssembler::GnuAssembler(AssemblerModule* assembler_module) :
 void GnuAssembler::beforeAssemble(void) {
 	assembler_code +=
 		"\t.text\n"
-		"\t.global _start\n"
-		"\t.type   _start, @function\n"
-		"_start:\n";
+		"\t.global main\n"
+		"main:\n";
 
-	size_t number_of_variables = getAssemblerModule()->getDefinedVariables()
-		.size() - getAssemblerModule()->getDefinedStringConstants().size();
-	if (number_of_variables != 0) {
-		assembler_code += "\tenter " + StringConverter::convert(4 *
-			number_of_variables) + ", 0\n" + "\t\n";
+	size_t size_of_variables = 4 * getAssemblerModule()->getDefinedVariables()
+		.size();
+	if (size_of_variables != 0) {
+		assembler_code += "\tenter $" + StringConverter::convert(
+			size_of_variables) + ", $0\n" + "\t\n";
 	}
 }
 
@@ -43,11 +42,11 @@ void GnuAssembler::processAssemblerMnemonic(const AssemblerMnemonic&
 			"\taddl $4, %esp\n" +
 			"\tpushl %eax\n";
 	} else if (mnemonic == AssemblerModule::PUSH_VARIABLE_MNEMONIC_NAME) {
-		assembler_code += "\tpushl " + StringConverter::convert(
-			getVariableShift(assembler_mnemonic.getOperand())) + "(%ebp)\n";
+		assembler_code += "\tpushl " + getVariableLink(assembler_mnemonic
+			.getOperand()) + "\n";
 	} else if (mnemonic == AssemblerModule::POP_VARIABLE_MNEMONIC_NAME) {
-		assembler_code += "\tpopl " + StringConverter::convert(getVariableShift(
-			assembler_mnemonic.getOperand())) + "(%ebp)\n";
+		assembler_code += "\tpopl " + getVariableLink(assembler_mnemonic
+			.getOperand()) + "\n";
 	} else if (mnemonic == AssemblerModule::DO_MNEMONIC_NAME) {
 		std::string operator_identifier = assembler_mnemonic.getOperand();
 		std::string function_name = LanguageElements::getOperatorFunction(
@@ -106,10 +105,21 @@ std::string GnuAssembler::getFloatConstantName(const std::string& value) {
 	if (i != float_constants.end()) {
 		return i->second;
 	} else {
-		std::string name = "FLOAT_CONSTANT" + StringConverter::convert(
+		std::string name = "FLOAT_CONSTANT_" + StringConverter::convert(
 			float_constants.size());
 		float_constants[value] = name;
 		return name;
+	}
+}
+
+std::string GnuAssembler::getVariableLink(const std::string& identifier) const {
+	AssemblerModule::StringConstantMap constants = getAssemblerModule()
+		->getDefinedStringConstants();
+	if (!constants.count(identifier)) {
+		return StringConverter::convert(getVariableShift(identifier)) +
+			"(%ebp)";
+	} else {
+		return "$" + identifier;
 	}
 }
 
