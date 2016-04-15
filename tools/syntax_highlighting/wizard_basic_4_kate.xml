@@ -3,7 +3,7 @@
 <language
 	name =       "Wizard BASIC 4"
 	section =    "Sources"
-	extensions = "*.ni"
+	extensions = "*.wb4"
 	version =    "1.0"
 	license =    "MIT">
 	<highlighting>
@@ -21,29 +21,24 @@
 			<item> or </item>
 		</list>
 		<list name = "functions">
-			<item> ShowString </item>
-			<item> ShowNumber </item>
-			<item> StartStopwatch </item>
-			<item> GetElapsedTime </item>
-			<item> Exit </item>
 			<item> Sin </item>
 			<item> Cos </item>
 			<item> Tg </item>
 			<item> Arcsin </item>
 			<item> Arccos </item>
 			<item> Arctg </item>
-			<item> Sh </item>
-			<item> Ch </item>
-			<item> Th </item>
-			<item> Exponent </item>
+			<item> Arctg2 </item>
+			<item> Pow </item>
+			<item> Exp </item>
+			<item> Sqrt </item>
 			<item> Ln </item>
 			<item> Lg </item>
-			<item> Modulus </item>
-			<item> Power </item>
-			<item> Integer </item>
-			<item> Random </item>
-			<item> SquareRoot </item>
-			<item> Angle </item>
+			<item> Abs </item>
+			<item> Trunc </item>
+			<item> Rand </item>
+			<item> ShowString </item>
+			<item> ShowNumber </item>
+			<item> Exit </item>
 		</list>
 		<contexts>
 			<context name =      "Normal"
@@ -60,7 +55,7 @@
 				<RegExpr
 					attribute = "Keyword"
 					context =   "#stay"
-					String =    "\bgo\s*to\b" />
+					String =    "\bgo to\b" />
 				<Float attribute = "Data" context = "#stay" />
 				<Int attribute = "Data" context = "#stay" />
 				<DetectChar

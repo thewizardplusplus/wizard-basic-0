@@ -1,5 +1,5 @@
 <NotepadPlus>
-    <UserLang name="Wizard BASIC 4" ext="ni">
+    <UserLang name="Wizard BASIC 4" ext="wb4">
         <Settings>
             <Global caseIgnored="no" />
             <TreatAsSymbol comment="no" commentLine="no" />
