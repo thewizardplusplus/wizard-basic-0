@@ -1,38 +1,47 @@
 #include "numbers.h"
 
-NumberType NumberAdd(NumberType number_1, NumberType number_2) {
+// a reverse order of arguments
+NumberType NumberAdd(NumberType number_2, NumberType number_1) {
 	return number_1 + number_2;
 }
 
-NumberType NumberSub(NumberType number_1, NumberType number_2) {
+// a reverse order of arguments
+NumberType NumberSub(NumberType number_2, NumberType number_1) {
 	return number_1 - number_2;
 }
 
-NumberType NumberMul(NumberType number_1, NumberType number_2) {
+// a reverse order of arguments
+NumberType NumberMul(NumberType number_2, NumberType number_1) {
 	return number_1 * number_2;
 }
 
-NumberType NumberDiv(NumberType number_1, NumberType number_2) {
+// a reverse order of arguments
+NumberType NumberDiv(NumberType number_2, NumberType number_1) {
 	return number_1 / number_2;
 }
 
-NumberType NumberLess(NumberType number_1, NumberType number_2) {
+// a reverse order of arguments
+NumberType NumberLess(NumberType number_2, NumberType number_1) {
 	return number_1 < number_2;
 }
 
-NumberType NumberMore(NumberType number_1, NumberType number_2) {
+// a reverse order of arguments
+NumberType NumberMore(NumberType number_2, NumberType number_1) {
 	return number_1 > number_2;
 }
 
-NumberType NumberEqual(NumberType number_1, NumberType number_2) {
+// a reverse order of arguments
+NumberType NumberEqual(NumberType number_2, NumberType number_1) {
 	return number_1 == number_2;
 }
 
-NumberType NumberAnd(NumberType number_1, NumberType number_2) {
+// a reverse order of arguments
+NumberType NumberAnd(NumberType number_2, NumberType number_1) {
 	return number_1 && number_2;
 }
 
-NumberType NumberOr(NumberType number_1, NumberType number_2) {
+// a reverse order of arguments
+NumberType NumberOr(NumberType number_2, NumberType number_1) {
 	return number_1 || number_2;
 }
 

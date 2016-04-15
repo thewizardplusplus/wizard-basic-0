@@ -31,11 +31,13 @@ NumberType Arctg(NumberType number) {
 	return atan(number);
 }
 
-NumberType Arctg2(NumberType y, NumberType x) {
+// a reverse order of arguments
+NumberType Arctg2(NumberType x, NumberType y) {
 	return atan2(y, x);
 }
 
-NumberType Pow(NumberType base, NumberType exponent) {
+// a reverse order of arguments
+NumberType Pow(NumberType exponent, NumberType base) {
 	return pow(base, exponent);
 }
 

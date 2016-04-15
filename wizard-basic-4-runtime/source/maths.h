@@ -9,8 +9,10 @@ NumberType Tg(NumberType number);
 NumberType Arcsin(NumberType number);
 NumberType Arccos(NumberType number);
 NumberType Arctg(NumberType number);
-NumberType Arctg2(NumberType y, NumberType x);
-NumberType Pow(NumberType base, NumberType exponent);
+// a reverse order of arguments
+NumberType Arctg2(NumberType x, NumberType y);
+// a reverse order of arguments
+NumberType Pow(NumberType exponent, NumberType base);
 NumberType Exp(NumberType number);
 NumberType Sqrt(NumberType number);
 NumberType Ln(NumberType number);
