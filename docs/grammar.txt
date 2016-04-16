@@ -1,7 +1,7 @@
 LINE_BREAK =          ["\r"], "\n", {["\r"], "\n"};
-CONSTANT_REAL =       ? /\b((\d+.\d*)|(\d*.\d+)|\d+)\b/ ?;
-CONSTANT_STRING =     ? /\b"([^"\\]|(\\(t|n|r|"|\\)))*"\b/ ?;
-IDENTIFIER_SIMPLE =   ? /\b\w+\b/i ?;
+CONSTANT_REAL =       ? /\b(\d+|(\d+.\d*)|(\d*.\d+))\b/ ?;
+CONSTANT_STRING =     ? /"([^"\\]|(\\(t|n|r|"|\\)))*"/ ?;
+IDENTIFIER_SIMPLE =   ? /\b[A-Za-z_]\w*\b/ ?;
 
 expression_atom =     CONSTANT_REAL | IDENTIFIER_SIMPLE | ("(", expression, ")")
 	| function_call;
@@ -18,13 +18,11 @@ statement_assign =    "let", IDENTIFIER_SIMPLE, "=", expression, LINE_BREAK;
 statement_if =        "if", expression, "then", LINE_BREAK, statement_list,
 	LINE_BREAK, "end", LINE_BREAK;
 statement_label =     "label", IDENTIFIER_SIMPLE, LINE_BREAK;
-statement_goto =      "go", "to", IDENTIFIER_SIMPLE, LINE_BREAK;
+statement_goto =      "go to", IDENTIFIER_SIMPLE, LINE_BREAK;
 statement_define =    "define", IDENTIFIER_SIMPLE, "as", CONSTANT_STRING,
 	LINE_BREAK;
-statement_declare =   "declare", IDENTIFIER_SIMPLE, "(", CONSTANT_REAL, ")",
-	LINE_BREAK;
 statement =           statement_assign | statement_if | statement_label |
-	statement_goto | statement_define | statement_declare | function_call;
+	statement_goto | statement_define | function_call;
 statement_list =      statement, {statement};
 
 function_call =       IDENTIFIER_SIMPLE, "(", [expression {",", expression}],
