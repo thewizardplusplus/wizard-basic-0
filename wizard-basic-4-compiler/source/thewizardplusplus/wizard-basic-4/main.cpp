@@ -8,7 +8,6 @@
 #include "AssemblerModule.h"
 #include "Compiler.h"
 #include "ExpressionCompiler.h"
-#include "DeclareFunctionStatement.h"
 #include "DefineStatement.h"
 #include "LetStatement.h"
 #include "IfStatement.h"
@@ -57,7 +56,6 @@ int main(int number_of_arguments, char** arguments) {
 		}
 
 		Compiler compiler(&assembler_module);
-		compiler.addStatementCompiler(new DeclareFunctionStatement(&compiler));
 		compiler.addStatementCompiler(new DefineStatement(&compiler));
 		compiler.addStatementCompiler(new LetStatement(&compiler));
 		compiler.addStatementCompiler(new IfStatement(&compiler));

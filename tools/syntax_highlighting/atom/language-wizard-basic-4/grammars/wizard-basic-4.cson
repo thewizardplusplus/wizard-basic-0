@@ -11,7 +11,7 @@
 		"comment": "Labels."
 	},
 	{
-		"match": "\\b(and|as|declare|define|end|if|label|let|not|or|then)\\b",
+		"match": "\\b(and|as|define|end|if|label|let|not|or|then)\\b",
 		"name": "keyword.control.wizard_basic_4",
 		"comment": "Keywords."
 	},

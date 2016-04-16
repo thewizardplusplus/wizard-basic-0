@@ -34,7 +34,6 @@ OBJECTS = \
 	$(SOURCE_COMPILER)EndStatement.o \
 	$(SOURCE_COMPILER)EmptyLineDeleter.o \
 	$(SOURCE_COMPILER)DefineStatement.o \
-	$(SOURCE_COMPILER)DeclareFunctionStatement.o \
 	$(SOURCE_COMPILER)CompilerConsoleParameters.o \
 	$(SOURCE_COMPILER)Compiler.o \
 	$(SOURCE_COMPILER)CommentDeleter.o \
@@ -60,7 +59,6 @@ OBJECTS = \
 	$(SOURCE_COMPILER_EXCEPTIONS)LabelConflictWithConditionalJumps.o \
 	$(SOURCE_COMPILER_EXCEPTIONS)InvalidStringFormat.o \
 	$(SOURCE_COMPILER_EXCEPTIONS)InvalidNumberOfCodeLineParts.o \
-	$(SOURCE_COMPILER_EXCEPTIONS)InvalidFunctionIdentifier.o \
 	$(SOURCE_COMPILER_EXCEPTIONS)IfWithoutEnd.o \
 	$(SOURCE_COMPILER_EXCEPTIONS)IdentifierConflictWithVariable.o \
 	$(SOURCE_COMPILER_EXCEPTIONS)IdentifierConflictWithFunction.o \
