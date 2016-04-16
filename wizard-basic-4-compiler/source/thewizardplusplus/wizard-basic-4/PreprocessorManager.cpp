@@ -31,7 +31,7 @@ CodeLines PreprocessorManager::preprocess(const std::string& absolute_file_path)
 	std::string buffer;
 	while (in.good()) {
 		std::getline(in, buffer);
-		code_lines[line_number] = buffer;
+		code_lines[line_number + 1] = buffer;
 		line_number++;
 	}
 
