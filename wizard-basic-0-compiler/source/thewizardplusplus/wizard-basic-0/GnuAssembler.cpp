@@ -1,9 +1,9 @@
 #include "GnuAssembler.h"
+#include "../utils/os.h"
 #include "../utils/StringConverter.h"
 #include "LanguageElements.h"
 #include "../utils/Formatter.h"
 #include "FunctionInfo.h"
-#include "../utils/os.h"
 #include <algorithm>
 #include <stdexcept>
 
@@ -17,8 +17,13 @@ GnuAssembler::GnuAssembler(AssemblerModule* assembler_module) :
 void GnuAssembler::beforeAssemble(void) {
 	assembler_code +=
 		"\t.text\n"
+		#ifdef OS_LINUX
 		"\t.global main\n"
 		"main:\n";
+		#elif defined(OS_WINDOWS)
+		"\t.global _main\n"
+		"_main:\n";
+		#endif
 
 	size_t size_of_variables = 4 * getAssemblerModule()->getDefinedVariables()
 		.size();
