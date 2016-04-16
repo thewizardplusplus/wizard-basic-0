@@ -33,14 +33,8 @@ void GnuAssembler::processAssemblerMnemonic(const AssemblerMnemonic&
 {
 	std::string mnemonic = assembler_mnemonic.getMnemonic();
 	if (mnemonic == AssemblerModule::PUSH_NUMBER_MNEMONIC_NAME) {
-		assembler_code +=
-			"\tflds " + getFloatConstantName(assembler_mnemonic.getOperand()) +
-			"\n" +
-			"\tsubl $4, %esp\n" +
-			"\tfstp (%esp)\n" +
-			"\tmovl (%esp), %eax\n" +
-			"\taddl $4, %esp\n" +
-			"\tpushl %eax\n";
+		std::string value = assembler_mnemonic.getOperand();
+		makeFloatConstantPushing(value);
 	} else if (mnemonic == AssemblerModule::PUSH_VARIABLE_MNEMONIC_NAME) {
 		assembler_code += "\tpushl " + getVariableLink(assembler_mnemonic
 			.getOperand()) + "\n";
@@ -70,13 +64,11 @@ void GnuAssembler::processAssemblerMnemonic(const AssemblerMnemonic&
 }
 
 void GnuAssembler::afterAssemble(void) {
+	assembler_code += "\t\n";
+	makeFloatConstantPushing(StringConverter::convert(SUCCESS_EXIT_CODE));
+	makeFunctionCall("Exit");
+
 	assembler_code +=
-		"\t\n"
-		#ifndef OS_WINDOWS
-		"\tcall Exit\n"
-		#else
-		"\tcall _Exit\n"
-		#endif
 		"\t\n"
 		"\t.data\n";
 
@@ -98,6 +90,17 @@ void GnuAssembler::afterAssemble(void) {
 	}
 
 	assembler_code = assembler_code.substr(0, assembler_code.size() - 1);
+}
+
+void GnuAssembler::makeFloatConstantPushing(const std::string& value) {
+	assembler_code +=
+		"\tflds " + getFloatConstantName(value) +
+		"\n" +
+		"\tsubl $4, %esp\n" +
+		"\tfstp (%esp)\n" +
+		"\tmovl (%esp), %eax\n" +
+		"\taddl $4, %esp\n" +
+		"\tpushl %eax\n";
 }
 
 std::string GnuAssembler::getFloatConstantName(const std::string& value) {

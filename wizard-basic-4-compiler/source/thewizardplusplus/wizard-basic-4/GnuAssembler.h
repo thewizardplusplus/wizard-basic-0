@@ -10,6 +10,8 @@ class GnuAssembler : public Assembler {
 public:
 	typedef std::map<std::string, std::string> FloatConstantMap;
 
+	static const size_t SUCCESS_EXIT_CODE = 0;
+
 	GnuAssembler(AssemblerModule* assembler_module);
 
 protected:
@@ -21,6 +23,7 @@ protected:
 private:
 	FloatConstantMap float_constants;
 
+	void makeFloatConstantPushing(const std::string& value);
 	std::string getFloatConstantName(const std::string& value);
 	std::string getVariableLink(const std::string& identifier) const;
 	int getVariableShift(const std::string& identifier) const;

@@ -93,7 +93,7 @@ LanguageElements::FunctionInfoMap LanguageElements::initFunctionInfoMap() {
 	inbuilt_functions.insert(LanguageElements::FunctionInfoMap::value_type(
 		"ShowNumber", FunctionInfo(1, false)));
 	inbuilt_functions.insert(LanguageElements::FunctionInfoMap::value_type(
-		"Exit", FunctionInfo(0, false)));
+		"Exit", FunctionInfo(1, false)));
 
 	return inbuilt_functions;
 }

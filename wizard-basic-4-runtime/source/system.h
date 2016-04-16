@@ -1,5 +1,7 @@
 #ifndef SYSTEM_H
 #define SYSTEM_H
 
-void Exit(void);
+#include "types.h"
+
+void Exit(NumberType code);
 #endif
