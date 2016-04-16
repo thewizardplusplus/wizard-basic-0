@@ -1,0 +1,38 @@
+"name": "Wizard BASIC 0",
+"scopeName": "source.wizard_basic_0",
+"fileTypes": ["wb0"],
+"patterns": [
+	{
+		"match": "\\b(?:label|go to) ([A-Za-z_]\\w*)\\b",
+		"name": "keyword.control.wizard_basic_0",
+		"captures": {
+			"1": {"name": "entity.name.type.wizard_basic_0"}
+		},
+		"comment": "Labels."
+	},
+	{
+		"match": "\\b(and|as|define|end|if|label|let|not|or|then)\\b",
+		"name": "keyword.control.wizard_basic_0",
+		"comment": "Keywords."
+	},
+	{
+		"match": "\\b(Abs|Arccos|Arcsin|Arctg|Arctg2|Cos|Exit|Exp|Lg|Ln|Pow|Rand|ShowNumber|ShowString|Sin|Sqrt|Tg|Trunc)\\b",
+		"name": "entity.name.function.wizard_basic_0",
+		"comment": "Subprograms."
+	},
+	{
+		"match": "\\d+(\\.\\d+)?",
+		"name": "constant.numeric.wizard_basic_0",
+		"comment": "Numbers."
+	},
+	{
+		"match": "\"(\\\\.|[^\"])*\"",
+		"name": "string.quoted.double.wizard_basic_0",
+		"comment": "Strings."
+	},
+	{
+		"match": "^\\s*note\\b.*$",
+		"name": "comment.line.wizard_basic_0",
+		"comment": "Comments."
+	}
+]
