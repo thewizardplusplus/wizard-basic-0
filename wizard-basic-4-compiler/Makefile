@@ -59,6 +59,7 @@ OBJECTS = \
 	$(SOURCE_COMPILER_EXCEPTIONS)LabelConflictWithConditionalJumps.o \
 	$(SOURCE_COMPILER_EXCEPTIONS)InvalidStringFormat.o \
 	$(SOURCE_COMPILER_EXCEPTIONS)InvalidNumberOfCodeLineParts.o \
+	$(SOURCE_COMPILER_EXCEPTIONS)InvalidIdentifierFormat.o \
 	$(SOURCE_COMPILER_EXCEPTIONS)IfWithoutEnd.o \
 	$(SOURCE_COMPILER_EXCEPTIONS)IdentifierConflictWithVariable.o \
 	$(SOURCE_COMPILER_EXCEPTIONS)IdentifierConflictWithFunction.o \

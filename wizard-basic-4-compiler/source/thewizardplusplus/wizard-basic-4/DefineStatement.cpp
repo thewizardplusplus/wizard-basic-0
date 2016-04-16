@@ -1,5 +1,7 @@
 #include "DefineStatement.h"
 #include "exceptions/InvalidNumberOfCodeLineParts.h"
+#include "ExpressionCompiler.h"
+#include "exceptions/InvalidIdentifierFormat.h"
 #include "exceptions/InvalidStringFormat.h"
 #include "Compiler.h"
 #include "AssemblerModule.h"
@@ -21,6 +23,10 @@ void DefineStatement::compile(const StringList& code_line_parts) {
 	}
 
 	std::string identifier = code_line_parts.front();
+	if (!ExpressionCompiler::isIdentifier(identifier)) {
+		throw InvalidIdentifierFormat(identifier);
+	}
+
 	std::string string = code_line_parts.back();
 	if (string.length() < 2 || string[0] != QUOTE_SYMBOL || string[
 		string.length() - 1] != QUOTE_SYMBOL)

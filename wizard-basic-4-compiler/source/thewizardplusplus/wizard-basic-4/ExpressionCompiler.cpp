@@ -39,7 +39,7 @@ bool ExpressionCompiler::isIdentifier(const std::string& token) {
 		std::bind1st(std::equal_to<char>(), UNDERSCORE_SYMBOL));
 	return (number_of_letters != 0 || number_of_underscores != 0) &&
 		static_cast<size_t>(number_of_digits + number_of_letters +
-		number_of_underscores) == token.length();
+		number_of_underscores) == token.length() && !std::isdigit(token[0]);
 }
 
 ExpressionCompiler::ExpressionCompiler(Compiler* compiler,

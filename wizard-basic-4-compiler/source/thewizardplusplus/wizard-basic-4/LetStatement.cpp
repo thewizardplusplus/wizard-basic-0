@@ -1,5 +1,7 @@
 #include "LetStatement.h"
 #include "exceptions/InvalidNumberOfCodeLineParts.h"
+#include "ExpressionCompiler.h"
+#include "exceptions/InvalidIdentifierFormat.h"
 #include "Compiler.h"
 #include "ExpressionCompiler.h"
 #include "AssemblerModule.h"
@@ -21,8 +23,11 @@ void LetStatement::compile(const StringList& code_line_parts) {
 	}
 
 	std::string identifier = code_line_parts.front();
-	std::string expression = code_line_parts.back();
+	if (!ExpressionCompiler::isIdentifier(identifier)) {
+		throw InvalidIdentifierFormat(identifier);
+	}
 
+	std::string expression = code_line_parts.back();
 	getCompiler()->getExpressionCompiler()->compile(expression);
 
 	AssemblerModule* assembler_module = getCompiler()->getAssemblerModule();
